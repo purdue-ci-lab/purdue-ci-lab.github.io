@@ -2,16 +2,18 @@
 layout: about
 title: about
 permalink: /
-subtitle: <a href='#'>Affiliations</a>. Address. Contacts. Motto. Etc.
+subtitle: >
+  Computational Imaging · Department of Computer Science · <a href="https://www.purdue.edu/">Purdue University</a>.
+  Led by <a href="https://sotirisnousias.com/">Dr. Sotiris Nousias</a>.
 
 profile:
   align: right
-  image: prof_pic.jpg
-  image_circular: false # crops the image to make it circular
+  image: nousias.jpg
+  image_circular: true # crops the image to make it circular
   more_info: >
-    <p>555 your office number</p>
-    <p>123 your address street</p>
-    <p>Your City, State 12345</p>
+    <p>Department of Computer Science</p>
+    <p>Purdue University</p>
+    <p>West Lafayette, IN 47907</p>
 
 selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
@@ -22,13 +24,22 @@ announcements:
   limit: 5 # leave blank to include all the news in the `_news` folder
 
 latest_posts:
-  enabled: true
-  scrollable: true # adds a vertical scroll bar if there are more than 3 new posts items
-  limit: 3 # leave blank to include all the blog posts
+  enabled: false
+  scrollable: true
+  limit: 3
 ---
 
-Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](https://www.reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
+We are the **Computational Imaging Lab** at Purdue University, led by [Dr. Sotiris Nousias](https://sotirisnousias.com/) in the [Department of Computer Science](https://www.cs.purdue.edu/).
 
-Put your address / P.O. box / other info right below your picture. You can also disable any of these elements by editing `profile` property of the YAML header of your `_pages/about.md`. Edit `_bibliography/papers.bib` and Jekyll will render your [publications page](/al-folio/publications/) automatically.
+Computational imaging combines novel optical designs, advanced mathematical and statistical algorithms, and emerging sensor technologies to see beyond the limits of conventional cameras. Our work centers on the most fundamental unit of light — the **photon** — and asks how processing light at this level can reveal new ways to visualize and interpret the world.
 
-Link to your social media connections, too. This theme is set up to use [Font Awesome icons](https://fontawesome.com/) and [Academicons](https://jpswalsh.github.io/academicons/), like the ones below. Add your Facebook, Twitter, LinkedIn, Google Scholar, or just disable all of them.
+Our research spans:
+
+- **Single-photon & photon-counting imaging** — extracting scene information from individual photons under extreme low-light and high-speed conditions.
+- **Time-of-flight & LiDAR view synthesis** — transient and neural-field methods for 3D reconstruction and novel-view rendering from active illumination.
+- **Computational photography & neural fields** — co-designing optics and learning-based algorithms for next-generation imaging systems.
+- **Non-line-of-sight imaging** — recovering hidden scenes from indirect light transport.
+
+We are part of Purdue CS and collaborate broadly across vision, optics, and graphics.
+
+**Join us.** We are actively recruiting motivated PhD students, and welcome inquiries from undergraduates, MS students, and postdocs. See the [Join Us](/join/) page to learn how to apply.

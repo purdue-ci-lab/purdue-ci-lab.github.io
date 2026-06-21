@@ -2,8 +2,8 @@
 layout: default
 permalink: /blog/
 title: blog
-nav: true
-nav_order: 1
+nav: false # set to true to add a Blog tab to the navbar
+nav_order: 7
 pagination:
   enabled: true
   collection: posts
