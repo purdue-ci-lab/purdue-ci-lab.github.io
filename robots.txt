@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://purdue-ci-lab.github.io/sitemap.xml
