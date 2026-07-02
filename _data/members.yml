@@ -1,0 +1,85 @@
+# -----------------------------------------------------------------------------
+# Lab members. Rendered by _pages/people.md as a card grid.
+#
+# To add a member: copy a block under `current`, fill in the fields, and drop a
+# square photo in assets/img/members/ (any link left blank is simply hidden).
+# Roles below default to "PhD Student" — EDIT each to the correct title.
+# -----------------------------------------------------------------------------
+
+pi:
+  name: Sotiris Nousias
+  role: Principal Investigator
+  title: Assistant Professor, Department of Computer Science, Purdue University
+  image: nousias.jpg # assets/img/nousias.jpg — replace with a real photo
+  homepage: https://sotirisnousias.com/
+  scholar: https://scholar.google.com/citations?user=BIFpV5UAAAAJ
+  twitter: https://x.com/Sotiris_No
+  email: snousias@purdue.edu # TODO: confirm email
+  blurb: >
+    Sotiris leads the Computational Imaging Lab. His research sits at the
+    intersection of computer vision, computational photography, and neural
+    fields, developing cameras and algorithms that reason about light at the
+    level of individual photons.
+
+# Current members (students, postdocs, research staff).
+current:
+  - name: Jerry Yan
+    role: PhD Student # TODO: confirm role
+    image: members/jerry-yan.jpg
+    homepage: # personal site (optional)
+    scholar: # Google Scholar URL (optional)
+    github: # GitHub URL (optional)
+    email: # email (optional)
+    blurb: # one short line (optional)
+
+  - name: Matteo Forlivesi
+    role: PhD Student # TODO: confirm role
+    image: members/matteo-forlivesi.jpg
+    homepage:
+    scholar:
+    github:
+    email:
+    blurb:
+
+  - name: Merve Barin
+    role: PhD Student # TODO: confirm role
+    image: members/merve-barin.jpg
+    homepage:
+    scholar:
+    github:
+    email:
+    blurb:
+
+  - name: Bowen Tan
+    role: PhD Student # TODO: confirm role
+    image: members/bowen-tan.jpg
+    homepage:
+    scholar:
+    github:
+    email:
+    blurb:
+
+  - name: Rohit Banerjee
+    role: PhD Student # TODO: confirm role
+    image: members/rohit-banerjee.jpg
+    homepage:
+    scholar:
+    github:
+    email:
+    blurb:
+
+  - name: Srinidhi Hegde
+    role: PhD Student # TODO: confirm role
+    image: members/srinidhi-hegde.jpg
+    homepage:
+    scholar:
+    github:
+    email:
+    blurb:
+
+# Alumni — add entries as `- name: ...` with an optional `now:` field for where they went.
+# Example:
+#   - name: Former Student
+#     role: PhD, 2029
+#     now: Research Scientist, Company
+alumni: []
