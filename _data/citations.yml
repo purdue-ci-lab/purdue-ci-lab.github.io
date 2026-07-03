@@ -1,5 +1,5 @@
 metadata:
-  last_updated: '2026-06-22'
+  last_updated: '2026-07-03'
 papers:
   BIFpV5UAAAAJ:2osOgNQ5qMEC:
     citations: 251
@@ -10,11 +10,11 @@ papers:
     title: Instrument Remote Centre of Motion Estimation for Robot-assisted Vitreoretinal Surgery
     year: '2022'
   BIFpV5UAAAAJ:8k81kl-MbHgC:
-    citations: 46
+    citations: 47
     title: Transient neural radiance fields for lidar view synthesis and 3D reconstruction
     year: '2023'
   BIFpV5UAAAAJ:9yKSN-GCB0IC:
-    citations: 9
+    citations: 8
     title: Retinal fundus imaging with a plenoptic sensor
     year: '2018'
   BIFpV5UAAAAJ:LkGwnXOMwfcC:
