@@ -1,8 +1,8 @@
 metadata:
-  last_updated: '2026-07-03'
+  last_updated: '2026-07-13'
 papers:
   BIFpV5UAAAAJ:2osOgNQ5qMEC:
-    citations: 251
+    citations: 254
     title: A theory of fermat paths for non-line-of-sight shape reconstruction
     year: '2019'
   BIFpV5UAAAAJ:5nxA0vEk-isC:
@@ -10,7 +10,7 @@ papers:
     title: Instrument Remote Centre of Motion Estimation for Robot-assisted Vitreoretinal Surgery
     year: '2022'
   BIFpV5UAAAAJ:8k81kl-MbHgC:
-    citations: 47
+    citations: 48
     title: Transient neural radiance fields for lidar view synthesis and 3D reconstruction
     year: '2023'
   BIFpV5UAAAAJ:9yKSN-GCB0IC:
@@ -62,7 +62,7 @@ papers:
     title: Large-scale, metric structure from motion for unordered light fields
     year: '2019'
   BIFpV5UAAAAJ:roLk4NBRz8UC:
-    citations: 11
+    citations: 12
     title: Design and quasistatic modelling of hybrid continuum multi-arm robots
     year: '2022'
   BIFpV5UAAAAJ:u-x6o8ySG0sC:
