@@ -1,8 +1,8 @@
 metadata:
-  last_updated: '2026-07-13'
+  last_updated: '2026-08-14'
 papers:
   BIFpV5UAAAAJ:2osOgNQ5qMEC:
-    citations: 254
+    citations: 256
     title: A theory of fermat paths for non-line-of-sight shape reconstruction
     year: '2019'
   BIFpV5UAAAAJ:5nxA0vEk-isC:
@@ -10,15 +10,15 @@ papers:
     title: Instrument Remote Centre of Motion Estimation for Robot-assisted Vitreoretinal Surgery
     year: '2022'
   BIFpV5UAAAAJ:8k81kl-MbHgC:
-    citations: 48
+    citations: 50
     title: Transient neural radiance fields for lidar view synthesis and 3D reconstruction
     year: '2023'
   BIFpV5UAAAAJ:9yKSN-GCB0IC:
-    citations: 8
+    citations: 7
     title: Retinal fundus imaging with a plenoptic sensor
     year: '2018'
   BIFpV5UAAAAJ:LkGwnXOMwfcC:
-    citations: 5
+    citations: 4
     title: A linear approach to absolute pose estimation for light fields
     year: '2020'
   BIFpV5UAAAAJ:MXK_kJrjxJIC:
@@ -29,16 +29,12 @@ papers:
     citations: 0
     title: Inter-Photon-Limited Videography
     year: '2026'
-  BIFpV5UAAAAJ:ULOm3_A8WrAC:
-    citations: 0
-    title: "Transient Neural Radiance Fields for Lidar View Synthesis and 3D Reconstruction\u2013Supplementary Material\u2013"
-    year: Unknown Year
   BIFpV5UAAAAJ:UebtZRa9Y70C:
     citations: 0
     title: From calibration to large-scale structure from motion with light fields
     year: '2021'
   BIFpV5UAAAAJ:Wp0gIr-vW9MC:
-    citations: 1
+    citations: 2
     title: 'Dark3R: Learning Structure from Motion in the Dark'
     year: '2026'
   BIFpV5UAAAAJ:YOwf2qJgpHMC:
@@ -46,7 +42,7 @@ papers:
     title: Ioannis Gkioulekas Ivo Ihrke Jean-francois Lalonde Jinwei Ye
     year: Unknown Year
   BIFpV5UAAAAJ:Zph67rFs4hoC:
-    citations: 5
+    citations: 6
     title: Opportunistic Single-Photon Time of Flight
     year: '2025'
   BIFpV5UAAAAJ:d1gkVwhDpl0C:
@@ -58,7 +54,7 @@ papers:
     title: 'Inter-Photon-Limited Videography: Supplemental Material'
     year: Unknown Year
   BIFpV5UAAAAJ:qjMakFHDy7sC:
-    citations: 34
+    citations: 33
     title: Large-scale, metric structure from motion for unordered light fields
     year: '2019'
   BIFpV5UAAAAJ:roLk4NBRz8UC:
@@ -66,7 +62,7 @@ papers:
     title: Design and quasistatic modelling of hybrid continuum multi-arm robots
     year: '2022'
   BIFpV5UAAAAJ:u-x6o8ySG0sC:
-    citations: 36
+    citations: 37
     title: Corner-based geometric calibration of multi-focus plenoptic cameras
     year: '2017'
   BIFpV5UAAAAJ:u5HHmVD_uO8C:
