@@ -1,5 +1,5 @@
 metadata:
-  last_updated: '2026-08-26'
+  last_updated: '2026-09-04'
 papers:
   BIFpV5UAAAAJ:2osOgNQ5qMEC:
     citations: 259
@@ -22,7 +22,7 @@ papers:
     title: A linear approach to absolute pose estimation for light fields
     year: '2020'
   BIFpV5UAAAAJ:MXK_kJrjxJIC:
-    citations: 26
+    citations: 27
     title: Passive Ultra-Wideband Single-Photon Imaging
     year: '2023'
   BIFpV5UAAAAJ:QIV2ME_5wuYC:
