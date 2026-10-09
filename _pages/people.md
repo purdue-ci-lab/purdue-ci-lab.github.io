@@ -14,11 +14,13 @@ heading: "Our people"
 <h2 class="lab-section-title">Faculty</h2>
 
 <div class="lab-faculty">
-  <img
-    src="{{ pi.image | prepend: '/assets/img/' | relative_url }}"
-    alt="{{ pi.name }}"
-    loading="eager"
-    class="lab-faculty-portrait" width="180" height="180" />
+  <div class="lab-image-card lab-faculty-photo">
+    <img
+      src="{{ pi.image | prepend: '/assets/img/' | relative_url }}"
+      alt="{{ pi.name }}"
+      loading="eager"
+      class="lab-faculty-portrait" width="180" height="180" />
+  </div>
   <div>
     <h3 style="margin-bottom: 0.2rem;">{{ pi.name }}</h3>
     <p style="margin-bottom: 0.6rem;"><strong>{{ pi.role }}</strong> &middot; {{ pi.title }}</p>
@@ -38,11 +40,13 @@ heading: "Our people"
 <div class="lab-members-grid">
 {% for m in site.data.members.current %}
   <div class="lab-member">
-    <img
-      src="{{ m.image | prepend: '/assets/img/' | relative_url }}"
-      alt="{{ m.name }}"
-      loading="lazy"
-      class="lab-member-portrait" width="180" height="180" />
+    <div class="lab-image-card lab-member-photo">
+      <img
+        src="{{ m.image | prepend: '/assets/img/' | relative_url }}"
+        alt="{{ m.name }}"
+        loading="lazy"
+        class="lab-member-portrait" width="180" height="180" />
+    </div>
     <div class="lab-member-name">{{ m.name }}</div>
     <div class="lab-member-role">{{ m.role }}</div>
     {% if m.blurb %}<div style="font-size: 0.8rem; margin-bottom: 0.35rem;">{{ m.blurb }}</div>{% endif %}
