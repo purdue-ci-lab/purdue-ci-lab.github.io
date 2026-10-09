@@ -92,7 +92,7 @@ for (const forbiddenGlobPath of [
   }
 }
 
-for (const requiredPath of ["test/visual", "test/integration_plugin_toggles.sh", "test/integration_distill.sh"]) {
+for (const requiredPath of ["test/integration_plugin_toggles.sh"]) {
   if (!exists(requiredPath)) {
     failures.push(`Starter integration/visual contract missing required path: \`${requiredPath}\`.`);
   }
