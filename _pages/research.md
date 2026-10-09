@@ -20,7 +20,9 @@ nav_order: 2
 {% for project in sorted_projects %}
   <section class="lab-research-row" id="{{ project.slug }}" aria-labelledby="title-{{ project.slug }}">
     <figure>
-      <img src="{{ project.img | relative_url }}" alt="{{ project.img_alt }}" loading="lazy" width="1200" height="800" />
+      <div class="lab-image-card">
+        <img src="{{ project.img | relative_url }}" alt="{{ project.img_alt }}" loading="lazy" width="1200" height="800" />
+      </div>
       <figcaption>{{ project.image_caption }} <span>Illustrative scene.</span></figcaption>
     </figure>
     <div class="lab-research-row-copy">

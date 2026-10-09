@@ -404,6 +404,9 @@ max_author_limit: # show every author immediately
 
 # Enables publication thumbnails. If disabled, none of the publications will display thumbnails, even if specified in the bib entry.
 enable_publication_thumbnails: true
+# Image shown for any publication without its own `preview = {file}` bib field.
+# Lives in assets/img/publication_preview/. Replace per paper with a real image or GIF.
+publication_preview_placeholder: camera_on_fire.svg
 
 # -----------------------------------------------------------------------------
 # Jekyll Link Attributes
