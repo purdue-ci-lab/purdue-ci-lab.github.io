@@ -23,7 +23,7 @@ latest_posts:
     </div>
   </div>
   <figure class="lab-hero-figure">
-    <img src="{{ '/assets/img/publication_preview/firecam.jpg' | relative_url }}" alt="CAMERA ON FIRE HELP IT" width="1200" height="800" fetchpriority="high" />
+    <img src="{{ '/assets/img/publication_preview/firecam.png' | relative_url }}" alt="CAMERA ON FIRE HELP IT" width="1200" height="800" fetchpriority="high" />
   </figure>
 </section>
 
@@ -32,22 +32,20 @@ latest_posts:
     <h2 id="home-research-title" class="lab-section-title">Research areas</h2>
     <a class="lab-text-link" href="{{ '/research/' | relative_url }}">All research areas <span aria-hidden="true">↗</span></a>
   </div>
-  <p class="lab-section-intro">We bring optical design, statistical inference, and emerging sensors together to understand how light carries information.</p>
+  <p class="lab-section-intro">Our current work focuses on these areas.</p>
   {% assign sorted_projects = site.projects | sort: 'importance' %}
   <div class="lab-research-grid">
   {% for project in sorted_projects %}
-    {% if project.importance == 1 or project.importance == 2 or project.importance == 5 %}
     <a class="lab-research-card" href="{{ project.url | relative_url }}">
       <div class="lab-image-card">
         <img src="{{ project.img | relative_url }}" alt="{{ project.img_alt }}" loading="lazy" width="1200" height="800" />
       </div>
       <div class="lab-research-card-copy">
-        <h3>{{ project.short_title }}</h3>
+        <h3>{{ project.title }}</h3>
         <p>{{ project.description }}</p>
         <span class="lab-card-link">Explore <span aria-hidden="true">↗</span></span>
       </div>
     </a>
-    {% endif %}
   {% endfor %}
   </div>
 </section>
