@@ -6,7 +6,6 @@ description: Publications from the Purdue Computational Imaging Lab, in reverse 
 nav: true
 nav_order: 3
 heading: "Publications"
-eyebrow: "Research output"
 ---
 
 <!-- _pages/publications.md -->
