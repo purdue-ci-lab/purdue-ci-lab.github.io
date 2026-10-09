@@ -7,9 +7,7 @@ img: assets/img/research/single-photon.webp
 importance: 1
 category: imaging
 short_title: "Single-photon imaging"
-label: "Photon-level sensing"
 img_alt: "Illustrative dim-light scene with a camera observing a softly lit ceramic teapot"
-image_caption: "Recovering detail when very little light reaches the camera."
 research_question: "What can a camera learn from just a few photons?"
 overview: "Single-photon sensors record individual light detections. We develop the optical systems and statistical algorithms that turn sparse measurements into images, video, and three-dimensional scene information."
 ---
@@ -20,7 +18,6 @@ Our work develops the optics, statistics, and learning-based algorithms needed t
 
 <figure class="lab-project-figure">
   <img src="{{ page.img | relative_url }}" alt="{{ page.img_alt }}" width="1200" height="800" loading="eager" />
-  <figcaption>{{ page.image_caption }} <span>Illustrative scene.</span></figcaption>
 </figure>
 
 ## Related publications

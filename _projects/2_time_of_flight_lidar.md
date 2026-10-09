@@ -7,9 +7,7 @@ img: assets/img/research/time-of-flight.webp
 importance: 2
 category: imaging
 short_title: "Time of flight"
-label: "Depth & light transport"
 img_alt: "Illustrative optical sensing camera facing a sphere, cylinder, and block at different distances"
-image_caption: "The travel time of light carries information about distance and shape."
 research_question: "How does the travel time of light reveal a scene’s geometry?"
 overview: "Time-resolved measurements encode more than a single depth value. We study reconstruction and view synthesis from transient and LiDAR data, using neural fields to model geometry, appearance, and light transport."
 ---
@@ -20,7 +18,6 @@ We study how to reconstruct 3D scenes from this data and how to synthesize novel
 
 <figure class="lab-project-figure">
   <img src="{{ page.img | relative_url }}" alt="{{ page.img_alt }}" width="1200" height="800" loading="eager" />
-  <figcaption>{{ page.image_caption }} <span>Illustrative scene.</span></figcaption>
 </figure>
 
 ## Related publications

@@ -1,6 +1,6 @@
 # Research image provenance
 
-The five images in `assets/img/research/` were generated with the built-in image generation tool on October 9, 2026. They are illustrative scenes, not records of Purdue experiments or paper results. Captions on the site identify them as illustrations.
+The five images in `assets/img/research/` were generated with the built-in image generation tool on October 9, 2026. They are illustrative scenes, not records of Purdue experiments or paper results. Their alt text identifies them as illustrations.
 
 The originals remain in the Codex generated-images folder. The site uses 1200-pixel-wide WebP exports at quality 86. The computational photography image is also used in the homepage hero.
 

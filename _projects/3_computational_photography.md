@@ -7,9 +7,7 @@ img: assets/img/research/computational-photography.webp
 importance: 3
 category: imaging
 short_title: "Computational photography"
-label: "Optics & reconstruction"
 img_alt: "Illustrative glass lens on an optical rail refracting a fern in natural window light"
-image_caption: "Designing how images are formed, and how they are reconstructed."
 research_question: "What becomes possible when optics and algorithms are designed together?"
 overview: "We treat image formation and reconstruction as parts of the same system. Optical design, unconventional measurements, and neural scene representations create new ways to capture and interpret the visual world."
 ---
@@ -20,7 +18,6 @@ We are particularly interested in neural-field representations that compactly mo
 
 <figure class="lab-project-figure">
   <img src="{{ page.img | relative_url }}" alt="{{ page.img_alt }}" width="1200" height="800" loading="eager" />
-  <figcaption>{{ page.image_caption }} <span>Illustrative scene.</span></figcaption>
 </figure>
 
 ## Related publications
