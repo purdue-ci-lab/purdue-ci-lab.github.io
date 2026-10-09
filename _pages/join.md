@@ -7,7 +7,7 @@ nav: true
 nav_order: 6
 ---
 
-We are growing, and we are looking for curious, motivated people who want to build the next generation of imaging systems — from the optics and sensors up through the algorithms. Strong backgrounds in **computer vision, signal processing, optics, machine learning, or systems** are all great fits.
+We are growing and looking for curious, motivated people who are excited to build the next generation of imaging systems — from optics and sensors to algorithms. We welcome applicants with experience in computer vision, signal processing, optics, machine learning, or systems, and especially those eager to learn across these areas and pursue new ideas in computational imaging.
 
 ## Prospective PhD students
 
@@ -17,20 +17,10 @@ Dr. Nousias is **actively recruiting PhD students**. To be advised in the lab, y
 - Mention Dr. Nousias in your statement if our work is a good match.
 - Feel free to email a short note (see below) so we know to look for your application.
 
-## Undergraduate & MS students at Purdue
-
-Currently enrolled Purdue students interested in a research project or thesis are welcome to reach out. Please include your CV, transcript, and a couple of sentences about what excites you about computational imaging.
-
-## Postdocs
-
-We consider postdoctoral researchers when funding is available. Email your CV, a short research statement, and links to representative work.
-
 ## How to apply / get in touch
 
 Email **{{ site.data.socials.email }}** with:
 
 1. A short paragraph on your background and what you'd like to work on.
 2. Your CV.
-3. (Students) Your transcript and the program you're applying to.
-
-> Note for the lab: update the email and application links above, and add any open-position details or funded project descriptions here as they become available.
+3. Your transcript and the program you're applying to.

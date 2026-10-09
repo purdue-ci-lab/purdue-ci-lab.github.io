@@ -3,7 +3,8 @@ layout: page
 title: Passive Ultra-Wideband Imaging
 description: Re-rendering dynamic scenes across many orders of magnitude in time from a single passive capture.
 permalink: /research/passive-ultra-wideband/
-img: assets/img/9.jpg
+img: assets/img/research/passive-ultra-wideband.webp
+img_alt: Conceptual illustration of photon signals from multiple independent light sources
 importance: 4
 category: imaging
 ---
@@ -14,7 +15,7 @@ This line of work explores the sensing models, reconstruction algorithms, and ap
 
 <div class="row">
   <div class="col-sm mt-3 mt-md-0">
-    {% include figure.liquid loading="eager" path="assets/img/9.jpg" title="Passive ultra-wideband imaging" class="img-fluid rounded z-depth-1" %}
+    {% include figure.liquid loading="eager" path="assets/img/research/passive-ultra-wideband.webp" title="Passive ultra-wideband imaging illustration" alt="Conceptual illustration of photon signals from multiple independent light sources" class="img-fluid rounded z-depth-1" %}
   </div>
 </div>
 

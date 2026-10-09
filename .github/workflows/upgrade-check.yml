@@ -8,6 +8,10 @@ on:
       - v1.0-dev
     paths:
       - "_config.yml"
+      - ".al-folio-overrides.yml"
+      - "_includes/**"
+      - "_layouts/**"
+      - "_sass/**"
       - "_data/**"
       - "_pages/**"
       - "_posts/**"
@@ -24,6 +28,10 @@ on:
       - v1.0-dev
     paths:
       - "_config.yml"
+      - ".al-folio-overrides.yml"
+      - "_includes/**"
+      - "_layouts/**"
+      - "_sass/**"
       - "_data/**"
       - "_pages/**"
       - "_posts/**"
@@ -49,6 +57,9 @@ jobs:
 
       - name: Run upgrade audit 🧪
         run: bundle exec al-folio upgrade audit
+
+      - name: Check site overrides 🧩
+        run: bundle exec al-folio upgrade overrides audit --fail-on-stale
 
       - name: Upload upgrade report 📄
         if: always()

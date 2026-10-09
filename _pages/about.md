@@ -6,17 +6,8 @@ subtitle: >
   Computational Imaging · Department of Computer Science · <a href="https://www.purdue.edu/">Purdue University</a>.
   Led by <a href="https://sotirisnousias.com/">Dr. Sotiris Nousias</a>.
 
-profile:
-  align: right
-  image: nousias.jpg
-  image_circular: true # crops the image to make it circular
-  more_info: >
-    <p>Department of Computer Science</p>
-    <p>Purdue University</p>
-    <p>West Lafayette, IN 47907</p>
-
 selected_papers: true # includes a list of papers marked as "selected={true}"
-social: true # includes social icons at the bottom of the page
+social: false
 
 announcements:
   enabled: true # includes a list of news items
@@ -33,7 +24,9 @@ We are the **Computational Imaging Lab** at Purdue University, led by [Dr. Sotir
 
 Computational imaging combines novel optical designs, advanced mathematical and statistical algorithms, and emerging sensor technologies to see beyond the limits of conventional cameras. Our work centers on the most fundamental unit of light — the **photon** — and asks how processing light at this level can reveal new ways to visualize and interpret the world.
 
-Our research spans:
+## Research areas
+
+<img src="{{ '/assets/img/research/single-photon.webp' | relative_url }}" alt="Conceptual illustration of sparse photon detections forming a high-speed video sequence" style="display: block; width: 100%; max-height: 300px; object-fit: cover; border-radius: 8px; margin: 1rem 0 1.5rem;" />
 
 - **Single-photon & photon-counting imaging** — extracting scene information from individual photons under extreme low-light and high-speed conditions.
 - **Time-of-flight & LiDAR view synthesis** — transient and neural-field methods for 3D reconstruction and novel-view rendering from active illumination.
@@ -42,4 +35,8 @@ Our research spans:
 
 We are part of Purdue CS and collaborate broadly across vision, optics, and graphics.
 
-**Join us.** We are actively recruiting motivated PhD students, and welcome inquiries from undergraduates, MS students, and postdocs. See the [Join Us](/join/) page to learn how to apply.
+**Join us.** We are actively recruiting motivated PhD students. See the [Join Us](/join/) page to learn how to apply.
+
+<style>
+  .post article h2 { text-transform: uppercase; }
+</style>

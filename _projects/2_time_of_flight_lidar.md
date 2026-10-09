@@ -3,7 +3,8 @@ layout: page
 title: Time-of-Flight & LiDAR View Synthesis
 description: Transient and neural-field methods for 3D reconstruction and novel-view rendering from active illumination.
 permalink: /research/time-of-flight-lidar/
-img: assets/img/1.jpg
+img: assets/img/research/time-of-flight.webp
+img_alt: Conceptual illustration of pulsed light and depth reconstruction in a time-of-flight system
 importance: 2
 category: imaging
 ---
@@ -14,7 +15,7 @@ We study how to reconstruct 3D scenes from this data and how to synthesize novel
 
 <div class="row">
   <div class="col-sm mt-3 mt-md-0">
-    {% include figure.liquid loading="eager" path="assets/img/1.jpg" title="Time-of-flight and LiDAR" class="img-fluid rounded z-depth-1" %}
+    {% include figure.liquid loading="eager" path="assets/img/research/time-of-flight.webp" title="Time-of-flight and LiDAR illustration" alt="Conceptual illustration of pulsed light and depth reconstruction in a time-of-flight system" class="img-fluid rounded z-depth-1" %}
   </div>
 </div>
 

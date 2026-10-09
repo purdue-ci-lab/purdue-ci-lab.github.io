@@ -3,7 +3,8 @@ layout: page
 title: Single-Photon & Photon-Counting Imaging
 description: Extracting scene structure from individual photons in extreme low-light and high-speed regimes.
 permalink: /research/single-photon-imaging/
-img: assets/img/3.jpg
+img: assets/img/research/single-photon.webp
+img_alt: Conceptual illustration of sparse photon detections forming a high-speed video sequence
 importance: 1
 category: imaging
 ---
@@ -12,10 +13,9 @@ Single-photon sensors such as SPADs (single-photon avalanche diodes) can time-st
 
 Our work develops the optics, statistics, and learning-based algorithms needed to turn sparse, noisy photon streams into usable images and 3D scene information.
 
-<!-- Replace this placeholder image with a figure from your own work. -->
 <div class="row">
   <div class="col-sm mt-3 mt-md-0">
-    {% include figure.liquid loading="eager" path="assets/img/3.jpg" title="Single-photon imaging" class="img-fluid rounded z-depth-1" %}
+    {% include figure.liquid loading="eager" path="assets/img/research/single-photon.webp" title="Single-photon imaging illustration" alt="Conceptual illustration of sparse photon detections forming a high-speed video sequence" class="img-fluid rounded z-depth-1" %}
   </div>
 </div>
 

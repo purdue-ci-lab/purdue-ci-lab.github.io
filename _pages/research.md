@@ -17,11 +17,11 @@ We build cameras and algorithms that reason about light at the level of individu
 {% for project in sorted_projects %}
   <a
     href="{{ project.url | relative_url }}"
-    style="flex: 1 1 280px; max-width: 360px; display: block; text-decoration: none; color: inherit; border: 1px solid rgba(128, 128, 128, 0.25); border-radius: 8px; overflow: hidden;">
+    style="flex: 1 1 280px; display: block; text-decoration: none; color: inherit; border: 1px solid rgba(128, 128, 128, 0.25); border-radius: 8px; overflow: hidden;">
     {% if project.img %}
     <img
       src="{{ project.img | relative_url }}"
-      alt="{{ project.title }}"
+      alt="{{ project.img_alt | default: project.title }}"
       loading="lazy"
       style="width: 100%; height: 160px; object-fit: cover; display: block;" />
     {% endif %}

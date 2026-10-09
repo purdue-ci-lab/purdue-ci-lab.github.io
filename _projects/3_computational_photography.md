@@ -3,7 +3,8 @@ layout: page
 title: Computational Photography & Neural Fields
 description: Co-designing optics and learning-based algorithms for next-generation imaging systems.
 permalink: /research/computational-photography/
-img: assets/img/6.jpg
+img: assets/img/research/computational-photography.webp
+img_alt: Conceptual illustration of optics and a reconstructed three-dimensional scene
 importance: 3
 category: imaging
 ---
@@ -14,7 +15,7 @@ We are particularly interested in neural-field representations that compactly mo
 
 <div class="row">
   <div class="col-sm mt-3 mt-md-0">
-    {% include figure.liquid loading="eager" path="assets/img/6.jpg" title="Computational photography" class="img-fluid rounded z-depth-1" %}
+    {% include figure.liquid loading="eager" path="assets/img/research/computational-photography.webp" title="Computational photography illustration" alt="Conceptual illustration of optics and a reconstructed three-dimensional scene" class="img-fluid rounded z-depth-1" %}
   </div>
 </div>
 

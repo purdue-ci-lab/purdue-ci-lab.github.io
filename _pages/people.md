@@ -2,7 +2,6 @@
 layout: page
 permalink: /people/
 title: people
-description: The people behind the Purdue Computational Imaging Lab.
 nav: true
 nav_order: 4
 ---
@@ -11,7 +10,8 @@ nav_order: 4
 
 {% assign pi = site.data.members.pi %}
 
-<!-- Principal Investigator -->
+<h2 style="margin-bottom: 1.4rem;">Faculty</h2>
+
 <div style="display: flex; flex-wrap: wrap; gap: 1.5rem; align-items: center; margin-bottom: 2.5rem;">
   <img
     src="{{ pi.image | prepend: '/assets/img/' | relative_url }}"

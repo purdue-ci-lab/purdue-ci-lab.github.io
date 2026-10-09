@@ -3,7 +3,8 @@ layout: page
 title: Non-Line-of-Sight Imaging
 description: Recovering hidden scenes from indirect light transport.
 permalink: /research/non-line-of-sight/
-img: assets/img/11.jpg
+img: assets/img/research/non-line-of-sight.webp
+img_alt: Conceptual illustration of light reflecting around a corner to reveal a hidden object
 importance: 5
 category: imaging
 ---
@@ -14,7 +15,7 @@ We develop physical models and reconstruction algorithms (including theory-of-Fe
 
 <div class="row">
   <div class="col-sm mt-3 mt-md-0">
-    {% include figure.liquid loading="eager" path="assets/img/11.jpg" title="Non-line-of-sight imaging" class="img-fluid rounded z-depth-1" %}
+    {% include figure.liquid loading="eager" path="assets/img/research/non-line-of-sight.webp" title="Non-line-of-sight imaging illustration" alt="Conceptual illustration of light reflecting around a corner to reveal a hidden object" class="img-fluid rounded z-depth-1" %}
   </div>
 </div>
 

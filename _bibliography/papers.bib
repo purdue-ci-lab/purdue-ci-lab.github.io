@@ -9,7 +9,7 @@
   author      = {Yan*, Jerry and Forlivesi*, Matteo and Tan, Bowen and Xie, Andrew and Somasundaram, Siddharth and Nousias, Sotiris},
   booktitle   = {Proceedings of the European Conference on Computer Vision (ECCV)},
   year        = {2026},
-  note        = {Also presented as a poster at ICCP 2026}
+  abstract    = {Recovering high-speed video from sparse photon detections requires using structure across both space and time. Spatiotemporal flux probing estimates intensity dynamics directly from photon arrivals, enabling recovery of fast motion and changing illumination with fewer detections. The approach also supports velocity-selective video reconstruction and extends to event and spike camera measurements.}
 }
 
 @inproceedings{xin2019fermat,
@@ -20,7 +20,8 @@
   title       = {A Theory of {F}ermat Paths for Non-Line-of-Sight Shape Reconstruction},
   author      = {Xin, Shumian and Nousias, Sotiris and Kutulakos, Kiriakos N. and Sankaranarayanan, Aswin C. and Narasimhan, Srinivasa G. and Gkioulekas, Ioannis},
   booktitle   = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
-  year        = {2019}
+  year        = {2019},
+  abstract    = {Fermat paths of light encode the shape of objects hidden from a transient camera. This work relates discontinuities in transient measurements to the paths' geometry and uses those constraints to recover hidden surfaces. The resulting method handles objects seen around corners or through diffusers across different transient-imaging systems.}
 }
 
 @inproceedings{wei2023passive,
@@ -31,7 +32,8 @@
   title       = {Passive Ultra-Wideband Single-Photon Imaging},
   author      = {Wei*, Mian and Nousias*, Sotiris and Gulve, Rahul and Lindell, David B. and Kutulakos, Kiriakos N.},
   booktitle   = {Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)},
-  year        = {2023}
+  year        = {2023},
+  abstract    = {A free-running single-photon camera can record changing light over timescales from ordinary motion to ultrafast events without synchronizing to a source. This work develops a flux-probing model and a Fourier-domain reconstruction method for sparse photon timestamps, then demonstrates passive video capture across a very wide range of temporal frequencies.}
 }
 
 @inproceedings{malik2023transient,
@@ -41,7 +43,8 @@
   title       = {Transient Neural Radiance Fields for {L}i{DAR} View Synthesis and 3{D} Reconstruction},
   author      = {Malik, Anagh and Mirdehghan, Parsa and Nousias, Sotiris and Kutulakos, Kiriakos N. and Lindell, David B.},
   booktitle   = {Advances in Neural Information Processing Systems (NeurIPS)},
-  year        = {2023}
+  year        = {2023},
+  abstract    = {Transient neural radiance fields learn from the time-resolved photon-count histograms produced by single-photon LiDAR. By modeling how light travels through a scene, the method renders transient measurements from new viewpoints and improves geometry and appearance recovery when only a few input views are available.}
 }
 
 @inproceedings{nousias2025opportunistic,
@@ -50,7 +53,8 @@
   title       = {Opportunistic Single-Photon Time of Flight},
   author      = {Nousias*, Sotiris and Wei*, Mian and Xiao, Howard and Wu, Maxx and Athar, Shahmeer and Wang, Kevin J. and Malik, Anagh and Barmherzig, David A. and Lindell, David B. and Kutulakos, Kiriakos N.},
   booktitle   = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
-  year        = {2025}
+  year        = {2025},
+  abstract    = {Pulsed lasers already present in a scene can provide useful illumination for passive three-dimensional imaging. Their characteristic patterns in photon arrival times allow a free-running single-photon camera to detect and separate asynchronous sources, synchronize to them computationally, and recover room-scale depth from the returning light.}
 }
 
 @inproceedings{nousias2017corner,
@@ -59,7 +63,8 @@
   title       = {Corner-Based Geometric Calibration of Multi-Focus Plenoptic Cameras},
   author      = {Nousias, Sotiris and Chadebecq, Fran{\c{c}}ois and Pichat, Jonas and Keane, Pearse and Ourselin, S{\'e}bastien and Bergeles, Christos},
   booktitle   = {Proceedings of the IEEE International Conference on Computer Vision (ICCV)},
-  year        = {2017}
+  year        = {2017},
+  abstract    = {This work calibrates multi-focus plenoptic cameras directly from raw images of a checkerboard. It detects corners inside the camera's micro-images, classifies the micro-lenses, and estimates camera geometry by minimizing reprojection error. The method recovers accurate calibration from a small number of images.}
 }
 
 @inproceedings{nousias2019largescale,
@@ -68,5 +73,6 @@
   title       = {Large-Scale, Metric Structure from Motion for Unordered Light Fields},
   author      = {Nousias, Sotiris and Lourakis, Manolis and Bergeles, Christos},
   booktitle   = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
-  year        = {2019}
+  year        = {2019},
+  abstract    = {This structure-from-motion pipeline reconstructs metric three-dimensional scenes from unordered sets of light-field images. It combines camera-pose recovery with robust triangulation, recovers scene scale, and extends to collections containing hundreds of views.}
 }

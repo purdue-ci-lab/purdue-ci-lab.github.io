@@ -8,6 +8,14 @@ const exists = (relPath) => fs.existsSync(path.join(root, relPath));
 const escapeRegExp = (value) => value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 
 const failures = [];
+const overrideManifest = exists(".al-folio-overrides.yml") ? read(".al-folio-overrides.yml") : "";
+const acknowledgedOverrides = new Set([...overrideManifest.matchAll(/^  ([^\s][^:]*):\s*$/gm)].map((match) => match[1]));
+
+const filesWithin = (dir) =>
+  fs.readdirSync(path.join(root, dir), { withFileTypes: true }).flatMap((entry) => {
+    const relPath = path.posix.join(dir, entry.name);
+    return entry.isDirectory() ? filesWithin(relPath) : [relPath];
+  });
 
 const packageJson = JSON.parse(read("package.json"));
 const scripts = packageJson.scripts || {};
@@ -63,7 +71,13 @@ if (/gem 'al_math',\s*:git =>/.test(gemfile)) {
 
 for (const forbiddenPath of ["_includes", "_layouts", "_sass", "_scripts", "assets/tailwind", "tailwind.config.js", "assets/webfonts"]) {
   if (exists(forbiddenPath)) {
-    failures.push(`Starter must not own core component path \`${forbiddenPath}\`; move ownership to the corresponding gem.`);
+    const localOverrideDirectory = ["_includes", "_layouts", "_sass"].includes(forbiddenPath);
+    const files = localOverrideDirectory ? filesWithin(forbiddenPath) : [];
+    if (!localOverrideDirectory || files.length === 0 || files.some((file) => !acknowledgedOverrides.has(file))) {
+      failures.push(
+        `Starter must not own unacknowledged core component path \`${forbiddenPath}\`; move it to the owning gem or acknowledge a site override.`
+      );
+    }
   }
 }
 
