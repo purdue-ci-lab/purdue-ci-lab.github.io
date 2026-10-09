@@ -4,7 +4,7 @@ title: join us
 permalink: /join/
 description: Opportunities to do research with the Purdue Computational Imaging Lab.
 nav: true
-nav_order: 6
+nav_order: 7
 heading: "Bring your curiosity."
 ---
 

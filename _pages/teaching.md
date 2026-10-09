@@ -1,15 +1,11 @@
 ---
 layout: page
 permalink: /teaching/
-title: teaching
-description: Course materials, schedules, and resources for classes taught.
-nav: false # set to true to add a Teaching tab to the navbar
-nav_order: 9
-calendar: true
+title: Teaching
+description: Courses offered by the lab at Purdue University.
+nav: true
+nav_order: 6
 ---
 
-This page displays a collection of courses with detailed schedules, materials, and resources. You can organize your courses by years, terms, or topics.
-
-{% include calendar.liquid calendar_id='test@gmail.com' timezone='Asia/Shanghai' %}
-
-{% include courses.liquid %}
+- **[CS59300-CVD: Computer Vision with Deep Learning](https://sotirisnousias.com/teaching/cs59300/spring2026.html)** — Spring 2026
+- **[CS59200-CII: Computational Imaging](https://sotirisnousias.com/teaching/cs59200/cs59200cii.html)** — Fall 2025
