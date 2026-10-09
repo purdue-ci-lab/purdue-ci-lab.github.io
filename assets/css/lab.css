@@ -8,6 +8,7 @@
   --global-hover-color: #654612;
   --global-text-color: #20211f;
   --global-divider-color: #deded8;
+  --lab-shadow-hover: 0 2px 4px rgb(17 17 17 / 6%), 0 18px 32px -16px rgb(17 17 17 / 22%);
 }
 
 html[data-theme="dark"] {
@@ -19,6 +20,7 @@ html[data-theme="dark"] {
   --global-bg-color: #191a18;
   --global-text-color: #f0f0ea;
   --global-divider-color: #393b35;
+  --lab-shadow-hover: 0 2px 4px rgb(0 0 0 / 50%), 0 18px 32px -16px rgb(0 0 0 / 70%);
 }
 
 .lab-site {
@@ -272,6 +274,58 @@ html[data-theme="dark"] {
   margin-bottom: 32px;
 }
 
+/* Image cards (research areas, publications, people): on hover the frame lifts with a soft shadow
+   while the image slowly zooms and brightens, after compimaging.dgp.toronto.edu. */
+.lab-image-card {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  border-radius: 4px;
+  isolation: isolate;
+  transition:
+    transform 200ms ease,
+    box-shadow 200ms ease;
+}
+
+.lab-image-card img {
+  display: block;
+  transition:
+    transform 600ms ease,
+    filter 300ms ease;
+}
+
+@media (hover: hover) {
+  .lab-image-card:hover,
+  .lab-research-card:hover .lab-image-card,
+  .lab-member:hover .lab-image-card {
+    box-shadow: var(--lab-shadow-hover);
+  }
+
+  .lab-image-card:hover img,
+  .lab-research-card:hover .lab-image-card img,
+  .lab-member:hover .lab-image-card img {
+    filter: brightness(1.04) saturate(1.06);
+  }
+}
+
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .lab-image-card:hover,
+  .lab-research-card:hover .lab-image-card,
+  .lab-member:hover .lab-image-card {
+    transform: translateY(-2px);
+  }
+
+  .lab-image-card:hover img,
+  .lab-research-card:hover .lab-image-card img,
+  .lab-member:hover .lab-image-card img {
+    transform: scale(1.04);
+  }
+}
+
+.lab-research-card:focus-visible .lab-image-card {
+  box-shadow: var(--lab-shadow-hover);
+}
+
 .lab-research-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -476,8 +530,8 @@ html[data-theme="dark"] {
 
 .lab-site .publications ol.bibliography > li > .row {
   display: grid;
-  grid-template-columns: 76px minmax(0, 1fr);
-  gap: 24px;
+  grid-template-columns: 200px minmax(0, 1fr);
+  gap: 28px;
   margin-inline: 0;
 }
 
@@ -539,6 +593,83 @@ html[data-theme="dark"] {
   display: none !important;
 }
 
+/* Publication image card, with the venue badge pinned to its top-left corner. */
+.lab-site .publications .publication-media {
+  align-self: start;
+  margin-bottom: 0;
+  border: 1px solid var(--global-divider-color);
+  background: var(--lab-surface);
+}
+
+.lab-site .publications .publication-media figure {
+  display: block;
+  margin: 0;
+}
+
+.lab-site .publications .publication-media img.preview {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+}
+
+.lab-site .publications ol.bibliography li .publication-media > img ~ abbr,
+.lab-site .publications ol.bibliography li .publication-media > figure ~ abbr {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  z-index: 1;
+  margin: 0;
+  box-shadow: 0 1px 3px rgb(0 0 0 / 12%);
+}
+
+/* Lab members in author lists, and the legend that explains the marks. */
+.lab-site .lab-member-author {
+  color: var(--global-text-color);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+.lab-site .publications .author sup {
+  margin-left: 1px;
+}
+
+.lab-site .publications ol.bibliography li .publication-award {
+  display: flex;
+  align-items: baseline;
+  gap: 7px;
+  margin-top: 2px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.6;
+  color: var(--lab-accent);
+}
+
+.lab-site .publications ol.bibliography li .publication-award i {
+  font-size: 12px;
+}
+
+/* The theme colours every span/em/strong with the body text colour; keep the award text gold like its trophy. */
+.lab-site .publications ol.bibliography li .publication-award span,
+.lab-site .publications ol.bibliography li .publication-award em,
+.lab-site .publications ol.bibliography li .publication-award strong {
+  color: inherit;
+}
+
+.lab-site .publications ol.bibliography li .links a.btn i {
+  margin-right: 5px;
+}
+
+.publication-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 24px;
+  margin: -24px 0 32px;
+  font-size: 13px;
+  color: var(--lab-muted);
+}
+
 .lab-faculty {
   display: grid;
   grid-template-columns: 180px minmax(0, 1fr);
@@ -570,6 +701,14 @@ html[data-theme="dark"] {
   width: 100%;
   height: auto;
   aspect-ratio: 1;
+}
+
+/* Photo frames for the hover effect; spacing sits on the frame so the shadow hugs the photo. */
+.lab-faculty-photo {
+  width: 180px;
+}
+
+.lab-member-photo {
   margin-bottom: 18px;
 }
 
@@ -713,6 +852,10 @@ html[data-theme="dark"] {
   .lab-site .publications ol.bibliography > li > .row {
     grid-template-columns: 1fr;
     gap: 14px;
+  }
+
+  .lab-site .publications .publication-media {
+    max-width: 360px;
   }
 
   .lab-site .news th {
