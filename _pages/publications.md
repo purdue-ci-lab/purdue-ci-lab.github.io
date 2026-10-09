@@ -5,6 +5,8 @@ title: publications
 description: Publications from the Purdue Computational Imaging Lab, in reverse chronological order.
 nav: true
 nav_order: 3
+heading: "Publications"
+eyebrow: "Research output"
 ---
 
 <!-- _pages/publications.md -->
@@ -20,13 +22,6 @@ nav_order: 3
 {% bibliography %}
 
 </div>
-
-<style>
-  .publication-year-filter { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 1rem 0 1.5rem; }
-  .publication-year-filter button { border: 1px solid var(--global-divider-color); border-radius: 999px; background: transparent; color: var(--global-text-color); padding: 0.3rem 0.85rem; cursor: pointer; }
-  .publication-year-filter button:hover, .publication-year-filter button[aria-pressed="true"] { border-color: var(--global-theme-color); color: var(--global-theme-color); }
-  .publications .year-filter-hidden { display: none !important; }
-</style>
 
 <script>
   document.addEventListener("DOMContentLoaded", () => {

@@ -1,0 +1,37 @@
+# Research image provenance
+
+The five images in `assets/img/research/` were generated with the built-in image generation tool on October 9, 2026. They are illustrative scenes, not records of Purdue experiments or paper results. Captions on the site identify them as illustrations.
+
+The originals remain in the Codex generated-images folder. The site uses 1200-pixel-wide WebP exports at quality 86. The computational photography image is also used in the homepage hero.
+
+Design reference: [Toronto Computational Imaging Group](https://compimaging.dgp.toronto.edu/). The Purdue site adapts general principles of generous spacing, clear headings, and paired research text and images. Its wording, palette, assets, and implementation are original to this site.
+
+## single-photon.webp
+
+```text
+Use case: photorealistic-natural. Asset type: landscape research image for a university computational imaging lab website. Style: restrained editorial science photography, believable ordinary materials, natural imperfections, muted neutral colors, accurate perspective, crisp focal subject, gentle background depth of field. Wide 3:2 composition, edge-to-edge single photograph. No people, no text, no logos, no watermark, no panels, no diagrams or overlaid graphics, no glowing photon particles, no holograms, no neon, no science-fiction lighting, no plastic CGI sheen. This is an illustrative scene, not a claimed real experiment. Photograph a quiet low-light tabletop scene: a matte pale ceramic teapot and a folded textured linen cloth are lit only by a very weak warm lamp outside the frame. A modest black industrial camera with a normal lens is at the near left edge, directed at the teapot. The teapot remains legible in soft shadow; preserve real ceramic texture and subtle fine grain. Simple uncluttered dark-gray background, genuine dim-room exposure, not blacked out. The idea is recovering visual information when very little light is available.
+```
+
+## time-of-flight.webp
+
+```text
+Use case: photorealistic-natural. Asset type: landscape research image for a university computational imaging lab website. Style: restrained editorial science photography, believable ordinary materials, natural imperfections, muted neutral colors, accurate perspective, crisp focal subject, gentle background depth of field. Wide 3:2 composition, edge-to-edge single photograph. No people, no text, no logos, no watermark, no panels, no diagrams or overlaid graphics, no glowing photon particles, no holograms, no neon, no science-fiction lighting, no plastic CGI sheen. This is an illustrative scene, not a claimed real experiment. Photograph a compact unbranded optical range-sensing camera mounted on a metal optical table in the near left foreground, directed toward three simple matte-white geometric objects (sphere, cylinder, rectangular block) at different physical distances across the table. The objects and the small camera all clearly belong to the same perspective. A slender metal optical mount stands beside the camera. Soft daylight mixed with ordinary lab light, gray metal and warm off-white surfaces. No visible laser beam; light pulses are invisible. The scene should clearly suggest measuring three-dimensional shape and distance, with clean mechanically plausible hardware, no screens.
+```
+
+## computational-photography.webp
+
+```text
+Use case: photorealistic-natural. Asset type: landscape research image for a university computational imaging lab website. Style: restrained editorial science photography, believable ordinary materials, natural imperfections, muted neutral colors, accurate perspective, crisp focal subject, gentle background depth of field. Wide 3:2 composition, edge-to-edge single photograph. No people, no text, no logos, no watermark, no panels, no diagrams or overlaid graphics, no glowing photon particles, no holograms, no neon, no science-fiction lighting, no plastic CGI sheen. This is an illustrative scene, not a claimed real experiment. Editorial close-up photograph of a single clear glass convex lens held upright in a simple black circular optics mount on a brushed metal rail, on a quiet tabletop by a window. Behind the lens is a small fern; through the glass the fern is visibly refracted and inverted in a physically plausible way. Side light reveals the glass rim and the satin metal texture. Off-white background, subtle olive-green plant colors and warm natural daylight. Minimal composition, real optical bench details, nothing futuristic. Lens is the main subject, framed with enough space to see the plant and its optically altered image. The idea is designing how a camera forms an image.
+```
+
+## passive-ultra-wideband.webp
+
+```text
+Use case: photorealistic-natural. Asset type: landscape research image for a university computational imaging lab website. Style: restrained editorial science photography, believable ordinary materials, natural imperfections, muted neutral colors, accurate perspective, crisp focal subject, gentle background depth of field. Wide 3:2 composition, edge-to-edge single photograph. No people, no text, no logos, no watermark, no panels, no diagrams or overlaid graphics, no glowing photon particles, no holograms, no neon, no science-fiction lighting, no plastic CGI sheen. This is an illustrative scene, not a claimed real experiment. Photograph a small ordinary metal desk fan beside a warm desk lamp in an understated dark room, with a compact black camera positioned at the near edge of the table observing the fan. The fan's cage is sharply defined; its spinning blades have mild authentic motion blur. The lamp softly illuminates the scene; natural window light from the other side gives a faint cool edge. No special active light source, no laser, no digital screen. Focus on the contrast between moving blades, fixed cage, and ordinary illumination. Believable domestic objects and real material texture, calm scientific editorial photograph suggesting observing dynamics with available light.
+```
+
+## non-line-of-sight.webp
+
+```text
+Use case: photorealistic-natural. Asset type: landscape research image for a university computational imaging lab website. Style: restrained editorial science photography, believable ordinary materials, natural imperfections, muted neutral colors, accurate perspective, crisp focal subject, gentle background depth of field. Wide 3:2 composition, edge-to-edge single photograph. No people, no text, no logos, no watermark, no panels, no diagrams or overlaid graphics, no glowing photon particles, no holograms, no neon, no science-fiction lighting, no plastic CGI sheen. This is an illustrative scene, not a claimed real experiment. A simple tabletop demonstration photographed from a high oblique angle. A single upright matte-gray rectangular partition, with clean straight edges, separates a small unbranded black camera in the foreground-left from a red wooden cube behind the partition on the far-right. The camera faces a broad matte-white relay wall across the table, and a small diffuse patch of ordinary light is visible on that relay wall. From the camera's low viewpoint the partition completely blocks direct sight of the red cube, while the elevated photographer can see the setup's geometry. Neutral gray table and off-white surroundings, soft natural light, mechanically simple setup. No mirrors, no light beams or arrows, no glowing reconstruction, no floating elements. The physical idea is sensing a hidden object through light scattered from a visible wall.
+```

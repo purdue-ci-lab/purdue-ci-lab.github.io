@@ -1,0 +1,35 @@
+---
+layout: default
+---
+<div class="post lab-home">
+  {{ content }}
+
+  {% if page.announcements and page.announcements.enabled %}
+    <section class="lab-section lab-news" aria-labelledby="home-news-title">
+      <div class="lab-section-heading">
+        <h2 id="home-news-title" class="lab-section-title">News</h2>
+        <a class="lab-text-link" href="{{ '/news/' | relative_url }}">All news <span aria-hidden="true">↗</span></a>
+      </div>
+      {% include news.liquid limit=true %}
+    </section>
+  {% endif %}
+
+  {% if page.selected_papers %}
+    <section class="lab-section" aria-labelledby="home-papers-title">
+      <div class="lab-section-heading">
+        <h2 id="home-papers-title" class="lab-section-title">Selected publications</h2>
+        <a class="lab-text-link" href="{{ '/publications/' | relative_url }}">All publications <span aria-hidden="true">↗</span></a>
+      </div>
+      {% include selected_papers.liquid %}
+    </section>
+  {% endif %}
+
+  <section class="lab-join-strip" aria-labelledby="home-join-title">
+    <div>
+      <p class="lab-eyebrow">Join us</p>
+      <h2 id="home-join-title">Curious about what a camera could become?</h2>
+      <p>We are recruiting PhD students who want to explore optics, sensing, and computation together.</p>
+    </div>
+    <a class="lab-button" href="{{ '/join/' | relative_url }}">Explore opportunities <span aria-hidden="true">↗</span></a>
+  </section>
+</div>

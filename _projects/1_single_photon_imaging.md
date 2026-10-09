@@ -4,19 +4,25 @@ title: Single-Photon & Photon-Counting Imaging
 description: Extracting scene structure from individual photons in extreme low-light and high-speed regimes.
 permalink: /research/single-photon-imaging/
 img: assets/img/research/single-photon.webp
-img_alt: Conceptual illustration of sparse photon detections forming a high-speed video sequence
 importance: 1
 category: imaging
+short_title: "Single-photon imaging"
+label: "Photon-level sensing"
+img_alt: "Illustrative dim-light scene with a camera observing a softly lit ceramic teapot"
+image_caption: "Recovering detail when very little light reaches the camera."
+research_question: "What can a camera learn from just a few photons?"
+overview: "Single-photon sensors record individual light detections. We develop the optical systems and statistical algorithms that turn sparse measurements into images, video, and three-dimensional scene information."
 ---
 
 Single-photon sensors such as SPADs (single-photon avalanche diodes) can time-stamp the arrival of individual photons with picosecond precision. This opens the door to imaging in regimes that overwhelm conventional cameras: extreme low light, very high speed, and very long range.
 
 Our work develops the optics, statistics, and learning-based algorithms needed to turn sparse, noisy photon streams into usable images and 3D scene information.
 
-<div class="row">
-  <div class="col-sm mt-3 mt-md-0">
-    {% include figure.liquid loading="eager" path="assets/img/research/single-photon.webp" title="Single-photon imaging illustration" alt="Conceptual illustration of sparse photon detections forming a high-speed video sequence" class="img-fluid rounded z-depth-1" %}
-  </div>
-</div>
+<figure class="lab-project-figure">
+  <img src="{{ page.img | relative_url }}" alt="{{ page.img_alt }}" width="1200" height="800" loading="eager" />
+  <figcaption>{{ page.image_caption }} <span>Illustrative scene.</span></figcaption>
+</figure>
 
-> This page is a starting point — edit `_projects/1_single_photon_imaging.md` to describe specific projects, add figures, and link related publications.
+## Related publications
+
+- [Spatiotemporal Flux Probing for Single-Photon Videography]({{ '/publications/#yan2026spatiotemporal' | relative_url }})

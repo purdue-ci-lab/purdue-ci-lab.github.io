@@ -5,6 +5,7 @@ permalink: /join/
 description: Opportunities to do research with the Purdue Computational Imaging Lab.
 nav: true
 nav_order: 6
+heading: "Bring your curiosity."
 ---
 
 We are growing and looking for curious, motivated people who are excited to build the next generation of imaging systems — from optics and sensors to algorithms. We welcome applicants with experience in computer vision, signal processing, optics, machine learning, or systems, and especially those eager to learn across these areas and pursue new ideas in computational imaging.

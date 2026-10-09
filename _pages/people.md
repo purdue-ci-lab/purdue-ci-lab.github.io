@@ -4,21 +4,22 @@ permalink: /people/
 title: people
 nav: true
 nav_order: 4
+heading: "Our people"
 ---
 
 <!-- _pages/people.md — renders the cards from _data/members.yml -->
 
 {% assign pi = site.data.members.pi %}
 
-<h2 style="margin-bottom: 1.4rem;">Faculty</h2>
+<h2 class="lab-section-title">Faculty</h2>
 
-<div style="display: flex; flex-wrap: wrap; gap: 1.5rem; align-items: center; margin-bottom: 2.5rem;">
+<div class="lab-faculty">
   <img
     src="{{ pi.image | prepend: '/assets/img/' | relative_url }}"
     alt="{{ pi.name }}"
     loading="eager"
-    style="width: 180px; height: 180px; object-fit: cover; border-radius: 50%;" />
-  <div style="flex: 1; min-width: 260px;">
+    class="lab-faculty-portrait" width="180" height="180" />
+  <div>
     <h3 style="margin-bottom: 0.2rem;">{{ pi.name }}</h3>
     <p style="margin-bottom: 0.6rem;"><strong>{{ pi.role }}</strong> &middot; {{ pi.title }}</p>
     {% if pi.blurb %}<p style="margin-bottom: 0.6rem;">{{ pi.blurb }}</p>{% endif %}
@@ -32,18 +33,18 @@ nav_order: 4
 </div>
 
 <!-- Current members -->
-<h2 style="margin-bottom: 1.4rem;">Members</h2>
+<h2 class="lab-section-title">Members</h2>
 
-<div style="display: flex; flex-wrap: wrap; gap: 2rem 1.6rem; justify-content: flex-start;">
+<div class="lab-members-grid">
 {% for m in site.data.members.current %}
-  <div style="flex: 0 0 160px; text-align: center;">
+  <div class="lab-member">
     <img
       src="{{ m.image | prepend: '/assets/img/' | relative_url }}"
       alt="{{ m.name }}"
       loading="lazy"
-      style="width: 150px; height: 150px; object-fit: cover; border-radius: 50%; margin-bottom: 0.6rem;" />
-    <div style="font-weight: 600; line-height: 1.2;">{{ m.name }}</div>
-    <div style="font-size: 0.85rem; opacity: 0.75; margin-bottom: 0.35rem;">{{ m.role }}</div>
+      class="lab-member-portrait" width="180" height="180" />
+    <div class="lab-member-name">{{ m.name }}</div>
+    <div class="lab-member-role">{{ m.role }}</div>
     {% if m.blurb %}<div style="font-size: 0.8rem; margin-bottom: 0.35rem;">{{ m.blurb }}</div>{% endif %}
     <div style="font-size: 0.85rem;">
       {% if m.homepage %}<a href="{{ m.homepage }}" style="margin: 0 0.25rem;">Web</a>{% endif %}
