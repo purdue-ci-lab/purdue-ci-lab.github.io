@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Sotiris co-organized the **Workshop on Computer Vision with Single-Photon Cameras** at ICCV 2025, and will organize the **Single Photon Challenge** at CVPR 2026.
+Sotiris co-organized the _Workshop on Computer Vision with Single-Photon Cameras_ and the _Single Photon Challenge_ at ICCV 2025.

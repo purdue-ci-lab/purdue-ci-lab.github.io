@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Dr. Sotiris Nousias joins Purdue CS as an Assistant Professor and launches the **Computational Imaging Lab**. 🎉
+Dr. Sotiris Nousias joins Purdue CS as an Assistant Professor and launches the Computational Imaging Lab (name pending). Welcome to our first PhD cohort: Jerry Yan, Matteo Forlivesi, Merve Barin, Bowen Tan, Rohit Banerjee, and Srinidhi Hegde!
