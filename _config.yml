@@ -406,7 +406,7 @@ max_author_limit: # show every author immediately
 enable_publication_thumbnails: true
 # Image shown for any publication without its own `preview = {file}` bib field.
 # Lives in assets/img/publication_preview/. Replace per paper with a real image or GIF.
-publication_preview_placeholder: camera_on_fire.svg
+publication_preview_placeholder: firecam.jpg
 
 # -----------------------------------------------------------------------------
 # Jekyll Link Attributes
