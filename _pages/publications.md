@@ -17,6 +17,11 @@ eyebrow: "Research output"
 
 <nav class="publication-year-filter" aria-label="Filter publications by year"></nav>
 
+<p class="publication-legend">
+  <span><sup>*</sup> Equal contribution</span>
+  <span><span class="lab-member-author">Underlined</span> names are lab members</span>
+</p>
+
 <div class="publications">
 
 {% bibliography %}

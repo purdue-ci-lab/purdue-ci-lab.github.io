@@ -40,7 +40,9 @@ latest_posts:
   {% for project in sorted_projects %}
     {% if project.importance == 1 or project.importance == 2 or project.importance == 5 %}
     <a class="lab-research-card" href="{{ project.url | relative_url }}">
-      <img src="{{ project.img | relative_url }}" alt="{{ project.img_alt }}" loading="lazy" width="1200" height="800" />
+      <div class="lab-image-card">
+        <img src="{{ project.img | relative_url }}" alt="{{ project.img_alt }}" loading="lazy" width="1200" height="800" />
+      </div>
       <div class="lab-research-card-copy">
         <p class="lab-eyebrow">{{ project.label }}</p>
         <h3>{{ project.short_title }}</h3>
