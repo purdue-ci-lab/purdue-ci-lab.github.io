@@ -67,7 +67,6 @@ Use [`_data/featured_plugins.yml`](../_data/featured_plugins.yml) as the catalog
 ## Test ownership
 
 - `al-folio` tests:
-  - Visual regression/parity (`test/visual/**`)
   - Cross-gem integration checks (plugin toggles, compat wiring, upgrade smoke tests)
   - Starter wiring contracts only
 - Gem-local tests (`al-folio-core`, `al-folio-distill`, `al-*`):
