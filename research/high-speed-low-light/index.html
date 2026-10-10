@@ -1,0 +1,159 @@
+<!DOCTYPE html> <html lang="en"> <head> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <title> Seeing Fast in the Dark | Purdue Computational Imaging Lab </title> <meta name="author" content="Sotiris Nousias"> <meta name="description" content="Capturing video at extreme frame rates and in very low light, where conventional cameras run out of photons."> <meta name="keywords" content="computational imaging, single-photon imaging, time-of-flight, computational photography, neural fields, computer vision, Purdue, Sotiris Nousias"> <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https:; img-src 'self' data: https:; font-src 'self' data: https:; media-src 'self' https:; frame-src 'self' https:; connect-src 'self' https:;"> <style>
+  :root {
+    --max-content-width: 1120px;
+  }
+</style> <link rel="stylesheet" href="/assets/css/tailwind.css?v=50c64c15cbb9fd1ce6056fdb8bcb4b62"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css" integrity="sha256-MVopmdyC2tYTiJ8wlktf0uh0v4NgT+vNdyVFepi7Q0c=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.5/css/academicons.min.css" integrity="sha256-SzrCOBJbGVFMahewkgjwnApaV2+av1DwMAA+/QGLyZw=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/scholar-icons@1.0.3/css/scholar-icons.css" integrity="sha256-VY3hHVj/hNX3fYG6wtbA6TcKJQl7+FthzGSyIB64klY=" crossorigin="anonymous"> <link defer rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons&amp;display=swap"> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-github.css?v=591dab5a4e56573bf4ef7fd332894c99" media="" id="highlight_theme_light"> <link rel="shortcut icon" href="data:image/svg+xml,&lt;svg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22&gt;&lt;text%20y=%22.9em%22%20font-size=%2290%22&gt;%F0%9F%93%B7&lt;/text&gt;&lt;/svg&gt;"> <link rel="stylesheet" href="/assets/css/main.css?v=f0b101217084a90093badfe99ff9a7d1"> <link rel="canonical" href="https://purdue-ci-lab.github.io/research/high-speed-low-light/"> <script src="/assets/js/theme.js?v=7af685e2ba20b37fef545c97b8064050"></script> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-native.css?v=5847e5ed4a4568527aa6cfab446049ca" media="none" id="highlight_theme_dark"> <script>
+    initTheme();
+  </script> <link rel="stylesheet" href="/assets/css/lab.css?v=ae6b3fc9b0fbc3cdea31a821f035546a"> </head> <body class="lab-site fixed-top-nav sticky-bottom-footer"> <header> <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top" role="navigation"> <div class="container"> <a class="navbar-brand lab-brand" href="/" aria-label="Purdue Computational Imaging Lab home"> <span class="lab-brand-university">Purdue</span> <span class="lab-brand-name">Computational Imaging Lab</span> </a> <button class="navbar-toggler collapsed navbar-toggler-main" type="button" data-nav-toggle="navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar top-bar"></span> <span class="icon-bar middle-bar"></span> <span class="icon-bar bottom-bar"></span> </button> <div class="collapse navbar-collapse navbar-collapse-main" id="navbarNav"> <ul class="navbar-nav navbar-menu-list flex-nowrap"> <li class="nav-item "> <a class="nav-link" href="/">about </a> </li> <li class="nav-item active"> <a class="nav-link" href="/research/">research <span class="sr-only">(current)</span> </a> </li> <li class="nav-item "> <a class="nav-link" href="/publications/">publications </a> </li> <li class="nav-item "> <a class="nav-link" href="/people/">people </a> </li> <li class="nav-item "> <a class="nav-link" href="/news/">news </a> </li> <li class="nav-item "> <a class="nav-link" href="/teaching/">Teaching </a> </li> <li class="nav-item "> <a class="nav-link" href="/join/">join us </a> </li> <li class="nav-item"> <button id="search-toggle" type="button" title="Search" aria-label="Open search"> <span class="nav-link">ctrl k <i class="fa-solid fa-magnifying-glass"></i></span> </button> </li> <li class="toggle-container"> <button id="light-toggle" type="button" title="Change theme" aria-label="Change color theme"> <i class="fa-half-sun-moon" id="light-toggle-system"></i> <i class="fa-solid fa-moon" id="light-toggle-dark"></i> <i class="fa-solid fa-sun" id="light-toggle-light"></i> </button> </li> </ul> </div> </div> </nav> <progress id="progress" value="0"> <div class="progress-container"> <span class="progress-bar"></span> </div> </progress> </header> <div class="container mt-5" role="main"> <div class="post"> <header class="post-header"> <h1 class="post-title">Seeing Fast in the Dark</h1> <p class="post-description">Capturing video at extreme frame rates and in very low light, where conventional cameras run out of photons.</p> </header> <article> <figure class="lab-project-figure"> <img src="/assets/img/research/uwbfan-spad-thumbnail.gif" alt="Video of a slow scene and a transient scene of a fan" width="1200" height="800" loading="eager"> </figure> <p>Fast motion and low light are two sides of the same problem: a conventional camera that shortens its exposure to freeze motion also collects less light, until each frame is little more than noise.</p> <p>We study how to recover high-speed video from sparse photon measurements, using sensors such as single-photon cameras that record when individual photons arrive. By modeling how light changes over time, we can reconstruct motion and illumination changes across timescales that no fixed frame rate captures, without needing a controlled light source.</p> <h2 id="related-publications">Related publications</h2> <div class="publications"> <ol class="bibliography"> <li> <div class="row" data-tags="high-speed-videography low-light-imaging"> <div class="col col-sm-2 abbr publication-media lab-image-card"> <figure> <picture> <img src="/assets/img/publication_preview/sptfluxprobe_preview.gif" class="preview" width="100%" height="auto" alt="Preview image for Spatiotemporal Flux Probing for Single-Photon Videography" data-zoomable="" loading="lazy" onerror="this.onerror=null; document.querySelectorAll('.responsive-img-srcset').forEach(function (n) { n.remove(); });"> </picture> </figure> <abbr class="badge rounded">ECCV</abbr> </div> <div id="yan2026spatiotemporal" class="col-sm-8"> <div class="title">Spatiotemporal Flux Probing for Single-Photon Videography</div> <div class="author"> <span class="lab-member-author">Jerry Yan</span><sup>*</sup>, <span class="lab-member-author">Matteo Forlivesi</span><sup>*</sup>, <span class="lab-member-author">Bowen Tan</span>, Andrew Xie, Siddharth Somasundaram, and <span class="lab-member-author">Sotiris Nousias</span> </div> <div class="periodical"> <em>In Proceedings of the European Conference on Computer Vision (ECCV)</em>, 2026 </div> <div class="periodical"> </div> <ul class="publication-tags" aria-label="Tags"> <li> <a href="/publications/?tag=high-speed-videography" data-tag="high-speed-videography">High-speed videography</a> </li> <li> <a href="/publications/?tag=low-light-imaging" data-tag="low-light-imaging">Low-light imaging</a> </li> </ul> <div class="links"> <a href="https://jerukan.github.io/spt-flux-probing/" class="btn btn-sm z-depth-0" role="button" rel="external nofollow noopener" target="_blank"><i class="fa-solid fa-globe" aria-hidden="true"></i>Webpage</a> <a href="https://jerukan.github.io/spt-flux-probing/paper-pdfs/spt-flux-probing-paper-main.pdf" class="btn btn-sm z-depth-0" role="button" rel="external nofollow noopener" target="_blank"><i class="fa-regular fa-file-pdf" aria-hidden="true"></i>PDF</a> <a href="https://arxiv.org/abs/2609.22479" class="btn btn-sm z-depth-0" role="button" rel="external nofollow noopener" target="_blank"><i class="ai ai-arxiv" aria-hidden="true"></i>arXiv</a> <a href="https://youtu.be/Bk7LkLDpwV8" class="btn btn-sm z-depth-0" role="button" rel="external nofollow noopener" target="_blank"><i class="fa-solid fa-video" aria-hidden="true"></i>Video</a> <a href="https://jerukan.github.io/spt-flux-probing/paper-pdfs/spt-flux-probing-paper-supp.pdf" class="btn btn-sm z-depth-0" role="button" rel="external nofollow noopener" target="_blank"><i class="fa-regular fa-file-lines" aria-hidden="true"></i>Supp</a> <a href="https://doi.org/10.1007/978-3-032-37020-4_8" class="btn btn-sm z-depth-0" role="button" rel="external nofollow noopener" target="_blank"><i class="ai ai-doi" aria-hidden="true"></i>DOI</a> <a class="abstract btn btn-sm z-depth-0" role="button"><i class="fa-solid fa-align-left" aria-hidden="true"></i>Abs</a> <a class="bibtex btn btn-sm z-depth-0" role="button"><i class="fa-solid fa-quote-right" aria-hidden="true"></i>Bib</a> </div> <div class="abstract hidden"> <p>Recovering high-speed video from sparse photon detections requires using structure across both space and time. Spatiotemporal flux probing estimates intensity dynamics directly from photon arrivals, enabling recovery of fast motion and changing illumination with fewer detections. The approach also supports velocity-selective video reconstruction and extends to event and spike camera measurements.</p> </div> <div class="bibtex hidden"> <figure class="highlight"><pre><code class="language-bibtex" data-lang="bibtex"><span class="nc">@inproceedings</span><span class="p">{</span><span class="nl">yan2026spatiotemporal</span><span class="p">,</span>
+  <span class="na">title</span> <span class="p">=</span> <span class="s">{Spatiotemporal Flux Probing for Single-Photon Videography}</span><span class="p">,</span>
+  <span class="na">author</span> <span class="p">=</span> <span class="s">{Yan, Jerry and Forlivesi, Matteo and Tan, Bowen and Xie, Andrew and Somasundaram, Siddharth and Nousias, Sotiris}</span><span class="p">,</span>
+  <span class="na">booktitle</span> <span class="p">=</span> <span class="s">{Proceedings of the European Conference on Computer Vision (ECCV)}</span><span class="p">,</span>
+  <span class="na">year</span> <span class="p">=</span> <span class="s">{2026}</span><span class="p">,</span>
+  <span class="na">doi</span> <span class="p">=</span> <span class="s">{10.1007/978-3-032-37020-4_8}</span>
+<span class="p">}</span></code></pre></figure> </div> </div> </div> </li> <li> <div class="row" data-tags="low-light-imaging high-speed-videography"> <div class="col col-sm-2 abbr publication-media lab-image-card"> <img class="preview preview-placeholder" src="/assets/img/publication_preview/firecam.png" alt="" width="300" height="200" loading="lazy"> <abbr class="badge rounded">ICCV</abbr> </div> <div id="wei2023passive" class="col-sm-8"> <div class="title">Passive Ultra-Wideband Single-Photon Imaging</div> <div class="author"> Mian Wei<sup>*</sup>, <span class="lab-member-author">Sotiris Nousias</span><sup>*</sup>, Rahul Gulve, David B. Lindell, and Kiriakos N. Kutulakos </div> <div class="periodical"> <em>In Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)</em>, 2023 </div> <div class="publication-award"> <i class="fa-solid fa-trophy" aria-hidden="true"></i> <span>Marr Prize (Best Paper Award)</span> </div> <div class="periodical"> </div> <ul class="publication-tags" aria-label="Tags"> <li> <a href="/publications/?tag=high-speed-videography" data-tag="high-speed-videography">High-speed videography</a> </li> <li> <a href="/publications/?tag=low-light-imaging" data-tag="low-light-imaging">Low-light imaging</a> </li> </ul> <div class="links"> <a href="https://www.dgp.toronto.edu/projects/ultra-wideband/" class="btn btn-sm z-depth-0" role="button" rel="external nofollow noopener" target="_blank"><i class="fa-solid fa-globe" aria-hidden="true"></i>Webpage</a> <a href="https://openaccess.thecvf.com/content/ICCV2023/papers/Wei_Passive_Ultra-Wideband_Single-Photon_Imaging_ICCV_2023_paper.pdf" class="btn btn-sm z-depth-0" role="button" rel="external nofollow noopener" target="_blank"><i class="fa-regular fa-file-pdf" aria-hidden="true"></i>PDF</a> <a href="https://github.com/t-cig/UWB1D" class="btn btn-sm z-depth-0" role="button" rel="external nofollow noopener" target="_blank"><i class="fa-brands fa-github" aria-hidden="true"></i>Code</a> <a href="https://www.dgp.toronto.edu/projects/ultra-wideband/static/docs/supp/iccv-final.mp4" class="btn btn-sm z-depth-0" role="button" rel="external nofollow noopener" target="_blank"><i class="fa-solid fa-video" aria-hidden="true"></i>Video</a> <a href="https://openaccess.thecvf.com/content/ICCV2023/supplemental/Wei_Passive_Ultra-Wideband_Single-Photon_ICCV_2023_supplemental.zip" class="btn btn-sm z-depth-0" role="button" rel="external nofollow noopener" target="_blank"><i class="fa-regular fa-file-lines" aria-hidden="true"></i>Supp</a> <a href="https://doi.org/10.1109/ICCV51070.2023.00747" class="btn btn-sm z-depth-0" role="button" rel="external nofollow noopener" target="_blank"><i class="ai ai-doi" aria-hidden="true"></i>DOI</a> <a class="abstract btn btn-sm z-depth-0" role="button"><i class="fa-solid fa-align-left" aria-hidden="true"></i>Abs</a> <a class="bibtex btn btn-sm z-depth-0" role="button"><i class="fa-solid fa-quote-right" aria-hidden="true"></i>Bib</a> </div> <div class="abstract hidden"> <p>A free-running single-photon camera can record changing light over timescales from ordinary motion to ultrafast events without synchronizing to a source. This work develops a flux-probing model and a Fourier-domain reconstruction method for sparse photon timestamps, then demonstrates passive video capture across a very wide range of temporal frequencies.</p> </div> <div class="bibtex hidden"> <figure class="highlight"><pre><code class="language-bibtex" data-lang="bibtex"><span class="nc">@inproceedings</span><span class="p">{</span><span class="nl">wei2023passive</span><span class="p">,</span>
+  <span class="na">title</span> <span class="p">=</span> <span class="s">{Passive Ultra-Wideband Single-Photon Imaging}</span><span class="p">,</span>
+  <span class="na">author</span> <span class="p">=</span> <span class="s">{Wei, Mian and Nousias, Sotiris and Gulve, Rahul and Lindell, David B. and Kutulakos, Kiriakos N.}</span><span class="p">,</span>
+  <span class="na">booktitle</span> <span class="p">=</span> <span class="s">{Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)}</span><span class="p">,</span>
+  <span class="na">year</span> <span class="p">=</span> <span class="s">{2023}</span><span class="p">,</span>
+  <span class="na">doi</span> <span class="p">=</span> <span class="s">{10.1109/ICCV51070.2023.00747}</span>
+<span class="p">}</span></code></pre></figure> </div> </div> </div> </li> </ol> </div> </article> </div> </div> <footer class="sticky-bottom mt-5" role="contentinfo"> <div class="container"> Built with <a href="https://jekyllrb.com/" target="_blank" rel="external nofollow noopener">Jekyll</a> and the <a href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener" target="_blank">al-folio</a> theme, hosted on <a href="https://pages.github.com/" target="_blank" rel="external nofollow noopener">GitHub Pages</a>. </div> </footer> <script>
+  window.alFolio = {
+    compatBootstrap: false
+  };
+</script> <script src="/assets/js/nav-toggle.js?v=141bd79a73ebc0f0b6ea58e440ae79fc"></script> <script defer src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha256-Nn1q/fx0H7SNLZMQ5Hw5JLaTRZp0yILA/FRexe19VdI=" crossorigin="anonymous"></script> <script defer src="https://cdn.jsdelivr.net/npm/imagesloaded@5.0.0/imagesloaded.pkgd.min.js" integrity="sha256-htrLFfZJ6v5udOG+3kNLINIKh2gvoKqwEhHYfTTMICc=" crossorigin="anonymous"></script> <script defer src="/assets/js/masonry.js?v=e49affc7bd2646f6acdad1dbe02c2359" type="text/javascript"></script> <script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js" integrity="sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI=" crossorigin="anonymous"></script> <script src="/assets/al_math/js/mathjax-setup.js"></script> <script defer src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6" crossorigin="anonymous"></script> <script src="/assets/js/tooltips-setup.js?v=fe487e99db6c43751e6e7bdb2d6a0611"></script> <script src="/assets/js/no_defer.js?v=53b1b1a645525975c963ce8bf8bfefcf"></script> <script defer src="/assets/js/common.js?v=87baac90f765f2f3362dcf6aaf312a8a"></script> <script defer src="/assets/js/copy_code.js?v=c8a01c11a92744d44b093fc3bda915df" type="text/javascript"></script> <script defer src="/assets/js/jupyter_new_tab.js?v=896d254890d9b47f0281f63bfccf0dee"></script> <script async src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script> <script async src="https://badge.dimensions.ai/badge.js"></script> <script defer src="https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js" integrity="sha256-ZgMyDAIYDYGxbcpJcfUnYwNevG/xi9OHKaR/8GK+jWc=" crossorigin="anonymous"></script> <script defer src="/assets/al_img_tools/js/zoom.js"></script> <script defer src="/assets/js/progress-bar.js?v=499464c5c63ced6cf7ad62509f1e2610" type="text/javascript"></script> <script src="https://cdn.jsdelivr.net/npm/vanilla-back-to-top@7.2.1/dist/vanilla-back-to-top.min.js" integrity="sha256-uMJJ3EoTyfRBoTbR+lrfu1uRQ87RZG8AR3cVNuQVeFg=" crossorigin="anonymous"></script> <script>
+    addBackToTop();
+  </script> <script type="module" src="/assets/al_search/js/search/ninja-keys.min.js"></script> <ninja-keys hidebreadcrumbs noautoloadmdicons placeholder="Type to start searching"></ninja-keys> <script src="/assets/al_search/js/search-setup.js"></script> <script>
+// get the ninja-keys element
+const ninja = document.querySelector('ninja-keys');
+
+// add the home and posts menu items
+ninja.data = [{
+    id: "nav-about",
+    title: "about",
+    section: "Navigation",
+    handler: () => {
+      window.location.href = "/";
+    },
+  },{id: "nav-research",
+          title: "research",
+          description: "We combine optics, sensors, and algorithms to recover information from faint light, fast motion, and hidden scenes.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/research/";
+          },
+        },{id: "nav-publications",
+          title: "publications",
+          description: "Publications from the Purdue Computational Imaging Lab, in reverse chronological order.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/publications/";
+          },
+        },{id: "nav-people",
+          title: "people",
+          description: "",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/people/";
+          },
+        },{id: "nav-news",
+          title: "news",
+          description: "Updates from the Purdue Computational Imaging Lab.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/news/";
+          },
+        },{id: "nav-teaching",
+          title: "Teaching",
+          description: "Courses offered by the lab at Purdue University.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/teaching/";
+          },
+        },{id: "nav-join-us",
+          title: "join us",
+          description: "Opportunities to do research with the Purdue Computational Imaging Lab.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/join/";
+          },
+        },{id: "news-dr-sotiris-nousias-joins-purdue-cs-as-an-assistant-professor-and-launches-the-computational-imaging-lab-name-pending-welcome-to-our-first-phd-cohort-jerry-yan-matteo-forlivesi-merve-barin-bowen-tan-rohit-banerjee-and-srinidhi-hegde",
+          title: 'Dr. Sotiris Nousias joins Purdue CS as an Assistant Professor and launches the...',
+          description: "",
+          section: "News",},{id: "news-sotiris-co-organized-the-workshop-on-computer-vision-with-single-photon-cameras-and-the-single-photon-challenge-at-iccv-2025",
+          title: 'Sotiris co-organized the Workshop on Computer Vision with Single-Photon Cameras and the Single...',
+          description: "",
+          section: "News",},{id: "news-our-first-paper-spatiotemporal-flux-probing-for-single-photon-videography-was-accepted-to-eccv-2026-congratulations-to-everyone-involved",
+          title: 'Our first paper “Spatiotemporal Flux Probing for Single-Photon Videography” was accepted to ECCV...',
+          description: "",
+          section: "News",},{id: "projects-seeing-fast-in-the-dark",
+          title: 'Seeing Fast in the Dark',
+          description: "Capturing video at extreme frame rates and in very low light, where conventional cameras run out of photons.",
+          section: "Projects",handler: () => {
+              window.location.href = "/research/high-speed-low-light/";
+            },},{id: "projects-light-in-flight",
+          title: 'Light in Flight',
+          description: "Time-of-flight imaging uses the travel time of light to measure depth, recover 3D shape, and see around corners.",
+          section: "Projects",handler: () => {
+              window.location.href = "/research/time-of-flight/";
+            },},{id: "projects-neural-inverse-rendering",
+          title: 'Neural Inverse Rendering',
+          description: "Neural inverse rendering from time-resolved measurements, recovering geometry, materials, and lighting from how light travels through a scene.",
+          section: "Projects",handler: () => {
+              window.location.href = "/research/neural-inverse-rendering/";
+            },},{
+        id: 'social-email',
+        title: 'email',
+        section: 'Socials',
+        handler: () => {
+          window.open("mailto:", "_blank");
+        },
+      },{
+        id: 'social-scholar',
+        title: 'Google Scholar',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://scholar.google.com/citations?user=", "_blank");
+        },
+      },{
+        id: 'social-x',
+        title: 'X',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://twitter.com/", "_blank");
+        },
+      },{
+        id: 'social-rss',
+        title: 'RSS Feed',
+        section: 'Socials',
+        handler: () => {
+          window.open("/feed.xml", "_blank");
+        },
+      },{
+      id: 'light-theme',
+      title: 'Change theme to light',
+      description: 'Change the theme of the site to Light',
+      section: 'Theme',
+      handler: () => {
+        setThemeSetting("light");
+      },
+    },
+    {
+      id: 'dark-theme',
+      title: 'Change theme to dark',
+      description: 'Change the theme of the site to Dark',
+      section: 'Theme',
+      handler: () => {
+        setThemeSetting("dark");
+      },
+    },
+    {
+      id: 'system-theme',
+      title: 'Use system default theme',
+      description: 'Change the theme of the site to System Default',
+      section: 'Theme',
+      handler: () => {
+        setThemeSetting("system");
+      },
+    },];
+
+</script> <script src="/assets/al_search/js/shortcut-key.js"></script> <script src="/assets/js/lab.js?v=da06d0446ccebdeee3c2218796d0e12b" defer></script> </body> </html>
