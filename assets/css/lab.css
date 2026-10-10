@@ -230,17 +230,6 @@ html[data-theme="dark"] {
   border-radius: 4px;
 }
 
-.lab-site figcaption {
-  color: var(--lab-muted);
-  font-size: 12px;
-  line-height: 1.6;
-  margin-top: 12px;
-}
-
-.lab-site figcaption span {
-  font-style: italic;
-}
-
 .lab-section {
   padding-block: 48px;
   border-top: 1px solid var(--global-divider-color);
@@ -342,7 +331,7 @@ html[data-theme="dark"] {
 .lab-research-card img {
   width: 100%;
   height: auto;
-  aspect-ratio: 3 / 2;
+  aspect-ratio: 4 / 3;
   object-fit: cover;
   border-radius: 4px;
 }
@@ -354,16 +343,12 @@ html[data-theme="dark"] {
   padding-top: 22px;
 }
 
-.lab-research-card-copy .lab-eyebrow {
-  margin-bottom: 10px;
-}
-
 .lab-site .lab-research-card h3 {
   font-size: 24px;
   margin: 0 0 14px;
 }
 
-.lab-research-card-copy > p:not(.lab-eyebrow) {
+.lab-research-card-copy > p {
   color: var(--lab-muted);
   font-size: 15px;
   line-height: 1.6;
@@ -382,15 +367,31 @@ html[data-theme="dark"] {
 }
 
 .lab-topic-nav,
-.publication-year-filter {
+.publication-year-filter,
+.publication-tag-filter {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
   margin: 0 0 40px;
 }
 
+/* The tag row sits directly under the year row. */
+.publication-year-filter:has(+ .publication-tag-filter:not([hidden])) {
+  margin-bottom: 12px;
+}
+
+.publication-tag-filter[hidden],
+.publication-tag-filter button[hidden] {
+  display: none;
+}
+
+.publication-filter-empty {
+  color: var(--lab-muted);
+}
+
 .lab-topic-nav a,
-.publication-year-filter button {
+.publication-year-filter button,
+.publication-tag-filter button {
   border: 1px solid var(--global-divider-color);
   background: transparent;
   color: var(--global-text-color);
@@ -404,7 +405,9 @@ html[data-theme="dark"] {
 
 .lab-topic-nav a:hover,
 .publication-year-filter button:hover,
-.publication-year-filter button[aria-pressed="true"] {
+.publication-year-filter button[aria-pressed="true"],
+.publication-tag-filter button:hover,
+.publication-tag-filter button[aria-pressed="true"] {
   background: var(--lab-surface);
   border-color: var(--lab-accent);
   color: var(--lab-accent);
@@ -423,7 +426,7 @@ html[data-theme="dark"] {
 .lab-research-row img {
   width: 100%;
   height: auto;
-  aspect-ratio: 3 / 2;
+  aspect-ratio: 4 / 3;
   object-fit: cover;
   border-radius: 4px;
 }
@@ -433,16 +436,12 @@ html[data-theme="dark"] {
   margin: 0 0 20px;
 }
 
-.lab-research-row .lab-eyebrow {
-  margin-bottom: 12px;
-}
-
 .lab-research-question {
   font-weight: 500;
   margin-bottom: 12px;
 }
 
-.lab-research-row-copy > p:not(.lab-eyebrow):not(.lab-research-question) {
+.lab-research-row-copy > p:not(.lab-research-question) {
   color: var(--lab-muted);
   line-height: 1.7;
   margin-bottom: 24px;
@@ -454,15 +453,23 @@ html[data-theme="dark"] {
   max-width: 800px;
 }
 
+/* Research-area pages: the thumbnail sits to the right of the body text. */
 .lab-project-figure {
-  margin-block: 36px 48px;
-  max-width: 900px;
+  float: right;
+  width: min(40%, 380px);
+  margin: 6px 0 24px 40px;
 }
 
 .lab-project-figure img {
   width: 100%;
   height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
   border-radius: 4px;
+}
+
+.lab-site .post article > h2 {
+  clear: both;
 }
 
 .lab-join-strip {
@@ -589,8 +596,38 @@ html[data-theme="dark"] {
   text-align: left;
 }
 
-.publications .year-filter-hidden {
+.publications .year-filter-hidden,
+.publications .tag-filter-hidden {
   display: none !important;
+}
+
+.lab-site .publications ol.bibliography li .publication-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 8px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.lab-site .publications ol.bibliography li .publication-tags li {
+  margin: 0;
+  padding: 0;
+}
+
+.lab-site .publications ol.bibliography li .publication-tags a {
+  display: inline-block;
+  padding: 2px 9px;
+  border-radius: 999px;
+  background: var(--lab-surface);
+  color: var(--lab-muted);
+  font-size: 12px;
+  line-height: 1.6;
+  text-decoration: none;
+}
+
+.lab-site .publications ol.bibliography li .publication-tags a:hover {
+  color: var(--lab-accent);
 }
 
 /* Publication image card, with the venue badge pinned to its top-left corner. */
@@ -673,23 +710,25 @@ html[data-theme="dark"] {
 
 .lab-faculty {
   display: grid;
-  grid-template-columns: 180px minmax(0, 1fr);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   align-items: center;
-  gap: 36px;
+  gap: 24px 32px;
   padding-bottom: 48px;
   margin-bottom: 48px;
   border-bottom: 1px solid var(--global-divider-color);
 }
 
-.lab-faculty-portrait,
-.lab-member-portrait {
-  object-fit: cover;
-  border-radius: 4px;
+.lab-faculty > :last-child {
+  grid-column: span 3;
 }
 
-.lab-faculty-portrait {
-  width: 180px;
-  height: 180px;
+.lab-faculty-portrait,
+.lab-member-portrait {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 4px;
 }
 
 .lab-members-grid {
@@ -718,6 +757,31 @@ html[data-theme="dark"] {
   font-weight: 500;
   line-height: 1.3;
   margin-bottom: 6px;
+}
+
+.lab-site a.lab-person-link {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
+.lab-faculty h3 a.lab-person-link {
+  display: inline;
+}
+
+.lab-person-link img {
+  transition: opacity 0.15s ease;
+}
+
+.lab-person-link:hover img {
+  opacity: 0.85;
+}
+
+.lab-site a.lab-person-link:hover .lab-member-name,
+.lab-site .lab-faculty h3 a.lab-person-link:hover {
+  color: var(--lab-accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
 .lab-member-role {
@@ -779,8 +843,13 @@ html[data-theme="dark"] {
     gap: 32px;
   }
 
+  .lab-faculty,
   .lab-members-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .lab-faculty > :last-child {
+    grid-column: span 2;
   }
 
   .lab-join-strip {
@@ -791,6 +860,12 @@ html[data-theme="dark"] {
 }
 
 @media (max-width: 700px) {
+  .lab-project-figure {
+    float: none;
+    width: 100%;
+    margin: 0 0 28px;
+  }
+
   .lab-site .container {
     padding-inline: 22px;
   }
@@ -846,8 +921,12 @@ html[data-theme="dark"] {
   }
 
   .lab-faculty {
-    grid-template-columns: 1fr;
-    gap: 24px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px 20px;
+  }
+
+  .lab-faculty > :last-child {
+    grid-column: 1 / -1;
   }
 
   .lab-site .publications ol.bibliography > li > .row {

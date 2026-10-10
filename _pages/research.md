@@ -23,10 +23,8 @@ nav_order: 2
       <div class="lab-image-card">
         <img src="{{ project.img | relative_url }}" alt="{{ project.img_alt }}" loading="lazy" width="1200" height="800" />
       </div>
-      <figcaption>{{ project.image_caption }} <span>Illustrative scene.</span></figcaption>
     </figure>
     <div class="lab-research-row-copy">
-      <p class="lab-eyebrow">{{ project.label }}</p>
       <h2 id="title-{{ project.slug }}">{{ project.title }}</h2>
       <p class="lab-research-question">{{ project.research_question }}</p>
       <p>{{ project.overview }}</p>

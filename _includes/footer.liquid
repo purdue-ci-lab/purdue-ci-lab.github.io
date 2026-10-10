@@ -1,5 +1,8 @@
 {% capture footer_contents %}
+{% comment %}
   &copy; Copyright {{ site.time | date: '%Y' }} {{ site.title }}. {{ site.footer_text }}
+{% endcomment %}
+  {{ site.footer_text }}
   {% if site.impressum_path %}
     <a href="{{ site.url }}{{ site.baseurl }}{{ site.impressum_path }}">Impressum</a>.
   {% endif %}

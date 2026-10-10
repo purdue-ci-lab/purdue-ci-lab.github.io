@@ -2,9 +2,9 @@
 # Powered by the jekyll-socials plugin: https://github.com/george-gca/jekyll-socials
 # Fill in / remove entries as needed. Leave a key blank or commented out to hide that icon.
 
-email: snousias@purdue.edu # TODO: confirm the lab/PI contact email
-scholar_userid: BIFpV5UAAAAJ # Dr. Nousias's Google Scholar ID
-x_username: Sotiris_No # X / Twitter handle (without @)
+email:  # TODO: confirm the lab/PI contact email
+scholar_userid:  # Dr. Nousias's Google Scholar ID
+x_username:  # X / Twitter handle (without @)
 # github_username: your-lab-org # TODO: add the lab's GitHub org/user
 # linkedin_username: sotiris-nousias # TODO: add if desired
 # orcid_id: 0000-0000-0000-0000 # TODO: add if desired

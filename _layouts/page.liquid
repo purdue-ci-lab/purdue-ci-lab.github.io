@@ -10,9 +10,6 @@ layout: default
 
 <div class="post">
   <header class="post-header">
-    <p class="lab-eyebrow">
-      {% if page.collection == 'projects' %}Research direction{% else %}{{ page.eyebrow | default: page.title }}{% endif %}
-    </p>
     <h1 class="post-title">{{ page.heading | default: page.title }}</h1>
     <p class="post-description">{{ page.description }}</p>
   </header>

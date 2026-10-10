@@ -1,0 +1,31 @@
+# -----------------------------------------------------------------------------
+# Publication tags (independent of the research areas in _projects/).
+#
+# Assign tags to a paper in _bibliography/papers.bib with a comma-separated
+# list of ids, e.g.
+#   tags = {high-speed-videography, low-light-imaging},
+#
+# Tags show under each publication and as filter buttons on the Publications
+# page, in the order listed here. Tags no publication uses are not shown.
+# -----------------------------------------------------------------------------
+
+- id: high-speed-videography
+  name: High-speed videography
+- id: low-light-imaging
+  name: Low-light imaging
+- id: opportunistic-sensing
+  name: Opportunistic sensing
+- id: time-of-flight
+  name: Time-of-flight sensing
+- id: non-line-of-sight
+  name: Non-line-of-sight imaging
+- id: 3d-reconstruction
+  name: 3D reconstruction
+- id: transient-rendering
+  name: Transient rendering
+- id: photometric-stereo
+  name: Photometric stereo
+- id: generative-models
+  name: Generative models
+- id: foundation-models
+  name: Foundation models

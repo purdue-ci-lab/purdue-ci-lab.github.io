@@ -1,6 +1,25 @@
 ---
 ---
-<div class="row">
+{%- comment -%}
+  Lab override: `tags = {id, id}` in the bib entry, with ids and display names from _data/tags.yml.
+  Tags are listed in _data/tags.yml order; ids missing from that file are shown as-is, last.
+{%- endcomment -%}
+{%- assign entry_tag_ids = '' | split: '' -%}
+{%- if entry.tags -%}
+  {%- assign raw_tag_ids = entry.tags | split: ',' -%}
+  {%- for raw_tag_id in raw_tag_ids -%}
+    {%- assign tag_id = raw_tag_id | strip | downcase -%}
+    {%- if tag_id != '' -%}
+      {%- assign entry_tag_ids = entry_tag_ids | push: tag_id -%}
+    {%- endif -%}
+  {%- endfor -%}
+{%- endif -%}
+<div
+  class="row"
+  {% if entry_tag_ids.size > 0 %}
+    data-tags="{{ entry_tag_ids | join: ' ' }}"
+  {% endif %}
+>
   {% if site.enable_publication_thumbnails %}
     {%- comment -%}
       Lab override: every entry shows an image. Set `preview = {name.gif}` in the bib entry
@@ -106,7 +125,7 @@
           {% endfor %}
         {%- endif -%}
 
-        {%- assign author_member = nil -%}
+        {%- assign author_member = null -%}
         {%- assign author_first_key = author.first | split: ' ' | first | remove: '.' | downcase | remove_accents -%}
         {%- for member in lab_members -%}
           {%- assign member_name_parts = member.name | split: ' ' -%}
@@ -120,7 +139,7 @@
             {%- endif -%}
           {%- endif -%}
         {%- endfor -%}
-        {%- if author_member == nil and author_is_self -%}
+        {%- if author_member == null and author_is_self -%}
           {%- assign author_member = site.data.members.pi -%}
         {%- endif -%}
         {%- capture author_name -%}{{ author.first }} {{ author_last_name }}{%- endcapture -%}
@@ -141,7 +160,8 @@
         {%- elsif coauthor_url -%}
           <a href="{{ coauthor_url }}">{{ author_name }}</a>{{ author_marks_html }}
         {%- else -%}
-          {{ author_name }}{{ author_marks_html }}
+          {{ author_name -}}
+          {{- author_marks_html }}
         {%- endif -%}
       {% endfor %}
       {%- assign more_authors = author_array_size | minus: author_array_limit -%}
@@ -231,6 +251,25 @@
     <div class="periodical">
       {{ entry.note | strip }}
     </div>
+    {% if entry_tag_ids.size > 0 %}
+      <ul class="publication-tags" aria-label="Tags">
+        {%- assign known_tag_ids = site.data.tags | map: 'id' -%}
+        {%- for tag in site.data.tags -%}
+          {%- if entry_tag_ids contains tag.id -%}
+            <li>
+              <a href="{{ '/publications/' | relative_url }}?tag={{ tag.id }}" data-tag="{{ tag.id }}">{{ tag.name }}</a>
+            </li>
+          {%- endif -%}
+        {%- endfor -%}
+        {%- for tag_id in entry_tag_ids -%}
+          {%- unless known_tag_ids contains tag_id -%}
+            <li>
+              <a href="{{ '/publications/' | relative_url }}?tag={{ tag_id }}" data-tag="{{ tag_id }}">{{ tag_id }}</a>
+            </li>
+          {%- endunless -%}
+        {%- endfor -%}
+      </ul>
+    {% endif %}
 
     <!-- Links/Buttons (lab override: reordered, with icons) -->
     <div class="links">
