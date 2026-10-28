@@ -1,6 +1,3 @@
----
----
-
 @inproceedings{yan2026spatiotemporal,
   abbr        = {ECCV},
   bibtex_show = {true},
@@ -20,21 +17,35 @@
   abstract    = {Recovering high-speed video from sparse photon detections requires using structure across both space and time. Spatiotemporal flux probing estimates intensity dynamics directly from photon arrivals, enabling recovery of fast motion and changing illumination with fewer detections. The approach also supports velocity-selective video reconstruction and extends to event and spike camera measurements.}
 }
 
-@inproceedings{xin2019fermat,
+@inproceedings{xie2026inter-photon-limited,
   abbr        = {CVPR},
   bibtex_show = {true},
   selected    = {true},
-  award       = {Best Paper Award},
-  title       = {A Theory of {F}ermat Paths for Non-Line-of-Sight Shape Reconstruction},
-  author      = {Xin, Shumian and Nousias, Sotiris and Kutulakos, Kiriakos N. and Sankaranarayanan, Aswin C. and Narasimhan, Srinivasa G. and Gkioulekas, Ioannis},
-  booktitle   = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
-  year        = {2019},
-  tags        = {non-line-of-sight, time-of-flight, 3d-reconstruction},
-  website     = {https://imaging.cs.cmu.edu/fermat_paths/},
-  pdf         = {https://openaccess.thecvf.com/content_CVPR_2019/papers/Xin_A_Theory_of_Fermat_Paths_for_Non-Line-Of-Sight_Shape_Reconstruction_CVPR_2019_paper.pdf},
-  supp        = {https://openaccess.thecvf.com/content_CVPR_2019/supplemental/Xin_A_Theory_of_CVPR_2019_supplemental.zip},
-  doi         = {10.1109/CVPR.2019.00696},
-  abstract    = {Fermat paths of light encode the shape of objects hidden from a transient camera. This work relates discontinuities in transient measurements to the paths' geometry and uses those constraints to recover hidden surfaces. The resulting method handles objects seen around corners or through diffusers across different transient-imaging systems.}
+  title       = {Inter-{Photon}-{Limited} {Videography}},
+  author      = {Xie, Andrew and Du, Dongyu and Nousias, Sotiris and Lindell, David B. and Kutulakos, Kiriakos N.},
+  booktitle   = {Proceedings of the {IEEE}/{CVF} {Conference} on {Computer} {Vision} and {Pattern} {Recognition} ({CVPR})},
+  year        = {2026},
+  pages = {34006--34015},
+  tags        = {high-speed-videography, low-light-imaging},
+  website     = {https://www.dgp.toronto.edu/projects/inter-photon/},
+  pdf         = {https://openaccess.thecvf.com/content/CVPR2026/papers/Xie_Inter-Photon-Limited_Videography_CVPR_2026_paper.pdf},
+  abstract    = {We consider the problem of imaging a dynamic scene when scene appearance variations can outpace photon arrivals. Under such conditions, a pixel is effectively "blind" to changes in appearance that occur within the timespan separating the photons it detects, and so the inter-photon interval presents a significant speed barrier to video acquisition systems. To analyze and advance imaging capabilities at the inter-photon limit, we introduce a novel reparameterization of time-varying flux that reveals the intrinsic difficulty of signal reconstruction by relating the Fourier decomposition of a flux function to the number of photons arriving within each oscillation period. We find that inter-photon-limited videography of general scenes is underexplored and beyond the reach of existing reconstruction techniques. To this end, we introduce Neural Flux Fields---a technique that combines statistical modeling of photon arrival with intrinsic priors of a neural network to achieve robust videography at the inter-photon limit. Using this approach, we demonstrate never-before-seen capabilities in video reconstruction across a range of captured single-photon video datasets spanning the inter-photon-limited regime.}
+}
+
+@inproceedings{guo2026dark3r,
+  abbr        = {CVPR},
+  bibtex_show = {true},
+  selected    = {true},
+  title       = {Dark3R: Learning Structure from Motion in the Dark},
+  author      = {Guo, Andrew Y. and Malik, Anagh and Tedla, SaiKiran and Dai, Yutong and Qin, Yiqian and Salehe, Zach and Attal, Benjamin and Nousias, Sotiris and Kutulakos, Kiriakos N. and Lindell, David B.},
+  booktitle   = {Proceedings of the {IEEE}/{CVF} {Conference} on {Computer} {Vision} and {Pattern} {Recognition} ({CVPR})},
+  year        = {2026},
+  pages = {34160--34170},
+  tags        = {3d-reconstruction, low-light-imaging},
+  website     = {https://andrewyguo.github.io/dark3r_webpage/},
+  pdf         = {https://openaccess.thecvf.com/content/CVPR2026/papers/Guo_Dark3R_Learning_Structure_from_Motion_in_the_Dark_CVPR_2026_paper.pdf},
+  arxiv       = {2603.05330},
+  abstract    = {We introduce Dark3R, a framework for structure from motion in the dark that operates directly on raw images with signal-to-noise ratios (SNRs) below -4 dB--a regime where conventional feature- and learning-based methods break down. Our key insight is to adapt large-scale 3D foundation models to extreme low-light conditions through a teacher-student distillation process, enabling robust feature matching and camera pose estimation in low light. Dark3R requires no 3D supervision; it is trained solely on noisy--clean raw image pairs, which can be either captured directly or synthesized using a simple Poisson-Gaussian noise model applied to well-exposed raw images.To train and evaluate our approach, we introduce a new, exposure-bracketed dataset that includes 42,000 multi-view raw images with ground-truth 3D annotations, and we demonstrate that Dark3R achieves state-of-the-art structure from motion in the low-SNR regime. Further, we demonstrate state-of-the-art novel view synthesis in the dark using Dark3R's predicted poses and a coarse-to-fine radiance field optimization procedure.}
 }
 
 @inproceedings{wei2023passive,
@@ -78,6 +89,7 @@
 @inproceedings{nousias2025opportunistic,
   abbr        = {CVPR},
   bibtex_show = {true},
+  selected    = {true},
   title       = {Opportunistic Single-Photon Time of Flight},
   author      = {Nousias*, Sotiris and Wei*, Mian and Xiao, Howard and Wu, Maxx and Athar, Shahmeer and Wang, Kevin J. and Malik, Anagh and Barmherzig, David A. and Lindell, David B. and Kutulakos, Kiriakos N.},
   booktitle   = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
@@ -91,9 +103,42 @@
   abstract    = {Pulsed lasers already present in a scene can provide useful illumination for passive three-dimensional imaging. Their characteristic patterns in photon arrival times allow a free-running single-photon camera to detect and separate asynchronous sources, synchronize to them computationally, and recover room-scale depth from the returning light.}
 }
 
+@inproceedings{nousias2019largescale,
+  abbr        = {CVPR},
+  bibtex_show = {true},
+  selected    = {false},
+  title       = {Large-Scale, Metric Structure from Motion for Unordered Light Fields},
+  author      = {Nousias, Sotiris and Lourakis, Manolis and Bergeles, Christos},
+  booktitle   = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+  year        = {2019},
+  tags        = {3d-reconstruction},
+  pdf         = {https://openaccess.thecvf.com/content_CVPR_2019/papers/Nousias_Large-Scale_Metric_Structure_From_Motion_for_Unordered_Light_Fields_CVPR_2019_paper.pdf},
+  video       = {https://www.dropbox.com/scl/fi/rovlqbrj38qdrns250ols/1781.mp4?rlkey=tqegy5cndgo0pqqtlkzapkp34&dl=0},
+  doi         = {10.1109/CVPR.2019.00341},
+  abstract    = {This structure-from-motion pipeline reconstructs metric three-dimensional scenes from unordered sets of light-field images. It combines camera-pose recovery with robust triangulation, recovers scene scale, and extends to collections containing hundreds of views.}
+}
+
+@inproceedings{xin2019fermat,
+  abbr        = {CVPR},
+  bibtex_show = {true},
+  selected    = {false},
+  award       = {Best Paper Award},
+  title       = {A Theory of {F}ermat Paths for Non-Line-of-Sight Shape Reconstruction},
+  author      = {Xin, Shumian and Nousias, Sotiris and Kutulakos, Kiriakos N. and Sankaranarayanan, Aswin C. and Narasimhan, Srinivasa G. and Gkioulekas, Ioannis},
+  booktitle   = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+  year        = {2019},
+  tags        = {non-line-of-sight, time-of-flight, 3d-reconstruction},
+  website     = {https://imaging.cs.cmu.edu/fermat_paths/},
+  pdf         = {https://openaccess.thecvf.com/content_CVPR_2019/papers/Xin_A_Theory_of_Fermat_Paths_for_Non-Line-Of-Sight_Shape_Reconstruction_CVPR_2019_paper.pdf},
+  supp        = {https://openaccess.thecvf.com/content_CVPR_2019/supplemental/Xin_A_Theory_of_CVPR_2019_supplemental.zip},
+  doi         = {10.1109/CVPR.2019.00696},
+  abstract    = {Fermat paths of light encode the shape of objects hidden from a transient camera. This work relates discontinuities in transient measurements to the paths' geometry and uses those constraints to recover hidden surfaces. The resulting method handles objects seen around corners or through diffusers across different transient-imaging systems.}
+}
+
 @inproceedings{nousias2017corner,
   abbr        = {ICCV},
   bibtex_show = {true},
+  selected    = {false},
   title       = {Corner-Based Geometric Calibration of Multi-Focus Plenoptic Cameras},
   author      = {Nousias, Sotiris and Chadebecq, Fran{\c{c}}ois and Pichat, Jonas and Keane, Pearse and Ourselin, S{\'e}bastien and Bergeles, Christos},
   booktitle   = {Proceedings of the IEEE International Conference on Computer Vision (ICCV)},
@@ -105,16 +150,4 @@
   abstract    = {This work calibrates multi-focus plenoptic cameras directly from raw images of a checkerboard. It detects corners inside the camera's micro-images, classifies the micro-lenses, and estimates camera geometry by minimizing reprojection error. The method recovers accurate calibration from a small number of images.}
 }
 
-@inproceedings{nousias2019largescale,
-  abbr        = {CVPR},
-  bibtex_show = {true},
-  title       = {Large-Scale, Metric Structure from Motion for Unordered Light Fields},
-  author      = {Nousias, Sotiris and Lourakis, Manolis and Bergeles, Christos},
-  booktitle   = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
-  year        = {2019},
-  tags        = {3d-reconstruction},
-  pdf         = {https://openaccess.thecvf.com/content_CVPR_2019/papers/Nousias_Large-Scale_Metric_Structure_From_Motion_for_Unordered_Light_Fields_CVPR_2019_paper.pdf},
-  video       = {https://www.dropbox.com/scl/fi/rovlqbrj38qdrns250ols/1781.mp4?rlkey=tqegy5cndgo0pqqtlkzapkp34&dl=0},
-  doi         = {10.1109/CVPR.2019.00341},
-  abstract    = {This structure-from-motion pipeline reconstructs metric three-dimensional scenes from unordered sets of light-field images. It combines camera-pose recovery with robust triangulation, recovers scene scale, and extends to collections containing hundreds of views.}
-}
+
