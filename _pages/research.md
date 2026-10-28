@@ -1,9 +1,9 @@
 ---
 layout: page
 title: research
-heading: Light, measured differently.
+heading: Research
 permalink: /research/
-description: We combine optics, sensors, and algorithms to recover information from faint light, fast motion, and hidden scenes.
+description: We combine computer vision, machine learning, optics, and sensors to recover information hidden from conventional cameras.
 nav: true
 nav_order: 2
 ---
