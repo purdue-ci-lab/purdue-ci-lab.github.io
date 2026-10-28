@@ -15,8 +15,8 @@ latest_posts:
 <section class="lab-hero" aria-labelledby="lab-hero-title">
   <div class="lab-hero-copy">
     <p class="lab-eyebrow">Purdue University · Computer Science</p>
-    <h1 id="lab-hero-title">New ways to see,<br />one photon at a time.</h1>
-    <p class="lab-hero-intro">We combine physics, computer vision, and graphics to extract more from light than a conventional image shows — rethinking how scenes are measured, reconstructed, and understood.</p>
+    <h1 id="lab-hero-title">Seeing the world at extremes.</h1>
+    <p class="lab-hero-intro">We develop imaging systems that can capture scenes beyond what conventional cameras can see.</p>
     <div class="lab-hero-actions">
       <a class="lab-button" href="{{ '/research/' | relative_url }}">Explore our research <span aria-hidden="true">↗</span></a>
       <a class="lab-text-link" href="{{ '/people/' | relative_url }}">Meet the lab <span aria-hidden="true">→</span></a>

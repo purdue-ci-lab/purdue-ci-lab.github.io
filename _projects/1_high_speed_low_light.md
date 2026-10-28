@@ -24,6 +24,6 @@ We study how to recover high-speed video from sparse photon measurements, using 
 
 <div class="publications">
 
-{% bibliography --group_by none --query @*[key=yan2026spatiotemporal||key=wei2023passive] %}
+{% bibliography --group_by none --query @*[key=yan2026spatiotemporal||key=xie2026inter-photon-limited||key=wei2023passive] %}
 
 </div>
