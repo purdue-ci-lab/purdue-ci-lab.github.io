@@ -12,7 +12,10 @@ latest_posts:
   enabled: false
 ---
 
-<section class="lab-hero" aria-labelledby="lab-hero-title">
+<section class="lab-hero lab-hero--video" aria-labelledby="lab-hero-title">
+  <video class="lab-hero-video" autoplay muted loop playsinline preload="auto" poster="{{ '/assets/img/hero-poster.jpg' | relative_url }}" aria-hidden="true">
+    <source src="{{ '/assets/video/background-merged.mp4' | relative_url }}" type="video/mp4" />
+  </video>
   <div class="lab-hero-copy">
     <p class="lab-eyebrow">Purdue University · Computer Science</p>
     <h1 id="lab-hero-title">Seeing the world at extremes.</h1>
@@ -22,9 +25,6 @@ latest_posts:
       <a class="lab-text-link" href="{{ '/people/' | relative_url }}">Meet the lab <span aria-hidden="true">→</span></a>
     </div>
   </div>
-  <figure class="lab-hero-figure">
-    <img src="{{ '/assets/img/publication_preview/firecam.png' | relative_url }}" alt="CAMERA ON FIRE HELP IT" width="1200" height="800" fetchpriority="high" />
-  </figure>
 </section>
 
 <section class="lab-section" aria-labelledby="home-research-title">

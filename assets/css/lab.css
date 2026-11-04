@@ -213,6 +213,95 @@ html[data-theme="dark"] {
   text-underline-offset: 4px;
 }
 
+/* Homepage hero with a darkened background video. Text is always light on dark, in both themes.
+   It breaks out of the 1120px .container to span the full window width, sitting flush
+   under the navbar; the copy stays aligned with the container's content edge. */
+.lab-site {
+  overflow-x: clip; /* hide the scrollbar-width sliver that 100vw adds on Windows/Linux */
+}
+
+.lab-hero.lab-hero--video {
+  --lab-hero-dim: 0.55; /* raise toward 1 for a darker video, lower for a brighter one */
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  width: 100vw;
+  min-height: clamp(480px, 72vh, 760px);
+  /* -3rem cancels the main container's .mt-5 margin (a layered !important rule that can't be overridden here) */
+  margin: -3rem calc(50% - 50vw) 0;
+  padding-block: clamp(48px, 7vw, 88px);
+  /* equal to the breakout distance, so the copy lines up with the page content below */
+  padding-inline: calc(50vw - 50%);
+  background: #111 url("../img/hero-poster.jpg") center / cover no-repeat;
+  color: #fff;
+}
+
+.lab-hero--video + .lab-section {
+  border-top: 0;
+}
+
+.lab-hero-video {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Uniform dim plus extra shading toward the bottom-left, where the text sits. */
+.lab-hero--video::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    linear-gradient(to top, rgb(0 0 0 / 55%), rgb(0 0 0 / 0%) 65%), linear-gradient(to right, rgb(0 0 0 / 35%), rgb(0 0 0 / 0%) 70%),
+    rgb(0 0 0 / var(--lab-hero-dim));
+}
+
+.lab-hero--video .lab-hero-copy {
+  max-width: 660px;
+  text-shadow: 0 1px 3px rgb(0 0 0 / 45%);
+}
+
+.lab-site .lab-hero--video .lab-eyebrow {
+  color: var(--lab-gold);
+}
+
+.lab-site .lab-hero--video h1 {
+  color: #fff;
+}
+
+.lab-hero--video .lab-hero-intro {
+  color: rgb(255 255 255 / 88%);
+}
+
+.lab-site .lab-hero--video .lab-button {
+  text-shadow: none;
+}
+
+.lab-site .lab-hero--video .lab-text-link,
+.lab-site .lab-hero--video .lab-text-link:hover {
+  color: #fff;
+}
+
+.lab-site .lab-hero--video .lab-text-link span {
+  color: var(--lab-gold);
+}
+
+.lab-site .lab-hero--video a:focus-visible {
+  outline-color: var(--lab-gold);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lab-hero-video {
+    display: none; /* the poster frame on the section background shows instead */
+  }
+}
+
 .lab-hero-figure,
 .lab-research-row figure,
 .lab-project-figure {
@@ -891,6 +980,11 @@ html[data-theme="dark"] {
 
   .lab-hero-figure img {
     aspect-ratio: 3 / 2;
+  }
+
+  .lab-hero.lab-hero--video {
+    min-height: 460px;
+    padding-block: 36px;
   }
 
   .lab-hero-intro {
