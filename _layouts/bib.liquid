@@ -14,6 +14,30 @@
     {%- endif -%}
   {%- endfor -%}
 {%- endif -%}
+{%- comment -%}
+  Lab override: the thumbnail and title link to the project website, falling back to the paper
+  (pdf, then arXiv, then DOI, then html). With no link at all they stay unlinked.
+{%- endcomment -%}
+{%- assign entry_primary_url = null -%}
+{%- if entry.website -%}
+  {%- assign entry_primary_url = entry.website -%}
+{%- elsif entry.pdf -%}
+  {%- if entry.pdf contains '://' -%}
+    {%- assign entry_primary_url = entry.pdf -%}
+  {%- else -%}
+    {%- assign entry_primary_url = entry.pdf | prepend: '/assets/pdf/' | relative_url -%}
+  {%- endif -%}
+{%- elsif entry.arxiv -%}
+  {%- assign entry_primary_url = entry.arxiv | prepend: 'https://arxiv.org/abs/' -%}
+{%- elsif entry.doi -%}
+  {%- assign entry_primary_url = entry.doi | prepend: 'https://doi.org/' -%}
+{%- elsif entry.html -%}
+  {%- if entry.html contains '://' -%}
+    {%- assign entry_primary_url = entry.html -%}
+  {%- else -%}
+    {%- assign entry_primary_url = entry.html | prepend: '/assets/html/' | relative_url -%}
+  {%- endif -%}
+{%- endif -%}
 <div
   class="row"
   {% if entry_tag_ids.size > 0 %}
@@ -29,7 +53,15 @@
     {%- assign preview_placeholder = site.publication_preview_placeholder | default: 'camera_on_fire.svg' -%}
     {%- assign entry_title_text = entry.title | strip_html | strip | escape -%}
     {%- assign entry_preview_alt = 'Preview image for ' | append: entry_title_text -%}
+    {%- comment -%} Click-to-zoom only when the image isn't already a link. {%- endcomment -%}
+    {%- assign preview_zoomable = true -%}
+    {%- if entry_primary_url -%}
+      {%- assign preview_zoomable = false -%}
+    {%- endif -%}
     <div class="col col-sm-2 abbr publication-media lab-image-card">
+      {% if entry_primary_url %}
+        <a class="publication-preview-link" href="{{ entry_primary_url }}" tabindex="-1" aria-hidden="true">
+      {% endif %}
       {% if entry.preview %}
         {% if entry.preview contains '://' %}
           <img class="preview" src="{{ entry.preview }}" alt="{{ entry_preview_alt }}" loading="lazy">
@@ -41,7 +73,7 @@
             path=entry_path
             sizes="200px"
             class="preview"
-            zoomable=true
+            zoomable=preview_zoomable
             avoid_scaling=true
             alt=entry_preview_alt
           %}
@@ -55,6 +87,9 @@
           height="200"
           loading="lazy"
         >
+      {% endif %}
+      {% if entry_primary_url %}
+        </a>
       {% endif %}
       {%- if entry.abbr -%}
         {%- if site.data.venues[entry.abbr] -%}
@@ -84,7 +119,13 @@
   <!-- Entry bib key -->
   <div id="{{ entry.key }}" class="{% if site.enable_publication_thumbnails %}col-sm-8{% else %}col-sm-10{% endif %}">
     <!-- Title -->
-    <div class="title">{{ entry.title }}</div>
+    <div class="title">
+      {%- if entry_primary_url -%}
+        <a href="{{ entry_primary_url }}">{{ entry.title }}</a>
+      {%- else -%}
+        {{ entry.title }}
+      {%- endif -%}
+    </div>
     <!-- Author -->
     <div class="author">
       {%- comment -%} Lab override: lab members (PI, current, alumni) from _data/members.yml are underlined. {%- endcomment -%}
