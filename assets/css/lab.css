@@ -751,12 +751,20 @@ html[data-theme="dark"] {
   margin: 0;
 }
 
+/* Thumbnails keep their own aspect ratio, from wide landscape up to square: anything taller than
+   it is wide is center-cropped to a square. The card is a size container so `100cqw` is its width. */
+.lab-site .publications ol.bibliography .row > .publication-media {
+  width: 100%;
+  container-type: inline-size;
+}
+
 .lab-site .publications .publication-media img.preview,
 .lab-site .publications .publication-media video.preview {
   display: block;
   width: 100%;
   height: auto;
-  aspect-ratio: 3 / 2;
+  max-height: 360px; /* fallback for browsers without container query units */
+  max-height: 100cqw;
   object-fit: cover;
 }
 
@@ -1054,7 +1062,7 @@ html[data-theme="dark"] {
     gap: 14px;
   }
 
-  .lab-site .publications .publication-media {
+  .lab-site .publications ol.bibliography .row > .publication-media {
     max-width: 360px;
   }
 
