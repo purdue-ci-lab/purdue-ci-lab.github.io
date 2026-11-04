@@ -3,7 +3,7 @@ layout: page
 title: Light in Flight
 description: Time-of-flight imaging uses the travel time of light to measure depth, recover 3D shape, and see around corners.
 permalink: /research/time-of-flight/
-img: assets/img/research/opp-vis-tof-thumbnail.gif
+img: assets/media/research/opp-vis-tof-thumbnail.mp4
 importance: 2
 category: imaging
 short_title: "Time-of-flight imaging"
@@ -13,7 +13,7 @@ overview: "Time-of-flight sensors record not just how much light returns, but wh
 ---
 
 <figure class="lab-project-figure">
-  <img src="{{ page.img | relative_url }}" alt="{{ page.img_alt }}" width="1200" height="800" loading="eager" />
+  {% include lab/media.liquid path=page.img alt=page.img_alt width="1200" height="800" loading="eager" %}
 </figure>
 
 Time-of-flight sensors measure how long light takes to travel through a scene. With picosecond timing, these transient measurements encode depth, shape, and material properties, along with light that has bounced several times before returning.

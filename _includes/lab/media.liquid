@@ -1,0 +1,67 @@
+{%- comment -%}
+  Lab-owned include (not a gem override). Renders an image, or a muted looping video when `path` is an .mp4.
+  For a local .mp4, a .jpg with the same name next to it is used as the poster frame if it exists.
+
+  Params:
+    path     site path (with or without a leading slash) or full URL
+    alt      alt text (aria-label on videos)
+    class    optional class on the <img>/<video>
+    loading  images only, default "lazy"
+    width / height  optional intrinsic size
+
+  Usage: {% include lab/media.liquid path=page.img alt=page.img_alt width="1200" height="800" %}
+{%- endcomment -%}
+{%- assign lab_media_path = include.path -%}
+{%- assign lab_media_poster = null -%}
+{%- if lab_media_path contains '://' -%}
+  {%- assign lab_media_src = lab_media_path -%}
+{%- else -%}
+  {%- assign lab_media_first_char = lab_media_path | slice: 0 -%}
+  {%- if lab_media_first_char != '/' -%}
+    {%- assign lab_media_path = lab_media_path | prepend: '/' -%}
+  {%- endif -%}
+  {%- assign lab_media_src = lab_media_path | relative_url -%}
+  {%- if lab_media_path contains '.mp4' -%}
+    {%- assign lab_media_poster_path = lab_media_path | replace: '.mp4', '.jpg' -%}
+    {%- assign lab_media_poster = site.static_files | where: 'path', lab_media_poster_path | first -%}
+  {%- endif -%}
+{%- endif -%}
+{%- if lab_media_path contains '.mp4' -%}
+  <video
+    src="{{ lab_media_src }}"
+    {% if lab_media_poster %}
+      poster="{{ lab_media_poster.path | relative_url }}"
+    {% endif %}
+    {% if include.class %}
+      class="{{ include.class }}"
+    {% endif %}
+    {% if include.width %}
+      width="{{ include.width }}"
+    {% endif %}
+    {% if include.height %}
+      height="{{ include.height }}"
+    {% endif %}
+    {% if include.alt %}
+      aria-label="{{ include.alt }}"
+    {% endif %}
+    autoplay
+    muted
+    loop
+    playsinline
+  ></video>
+{%- else -%}
+  <img
+    src="{{ lab_media_src }}"
+    alt="{{ include.alt }}"
+    {% if include.class %}
+      class="{{ include.class }}"
+    {% endif %}
+    {% if include.width %}
+      width="{{ include.width }}"
+    {% endif %}
+    {% if include.height %}
+      height="{{ include.height }}"
+    {% endif %}
+    loading="{{ include.loading | default: 'lazy' }}"
+  >
+{%- endif -%}

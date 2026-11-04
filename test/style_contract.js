@@ -73,7 +73,9 @@ for (const forbiddenPath of ["_includes", "_layouts", "_sass", "_scripts", "asse
   if (exists(forbiddenPath)) {
     const localOverrideDirectory = ["_includes", "_layouts", "_sass"].includes(forbiddenPath);
     const files = localOverrideDirectory ? filesWithin(forbiddenPath) : [];
-    if (!localOverrideDirectory || files.length === 0 || files.some((file) => !acknowledgedOverrides.has(file))) {
+    // Lab-owned partials live in `_includes/lab/`, a namespace no gem ships, so they are not overrides.
+    const overrideFiles = files.filter((file) => !file.startsWith("_includes/lab/"));
+    if (!localOverrideDirectory || files.length === 0 || overrideFiles.some((file) => !acknowledgedOverrides.has(file))) {
       failures.push(
         `Starter must not own unacknowledged core component path \`${forbiddenPath}\`; move it to the owning gem or acknowledge a site override.`
       );

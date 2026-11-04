@@ -13,8 +13,8 @@ latest_posts:
 ---
 
 <section class="lab-hero lab-hero--video" aria-labelledby="lab-hero-title">
-  <video class="lab-hero-video" autoplay muted loop playsinline preload="auto" poster="{{ '/assets/img/hero-poster.jpg' | relative_url }}" aria-hidden="true">
-    <source src="{{ '/assets/video/background-merged.mp4' | relative_url }}" type="video/mp4" />
+  <video class="lab-hero-video" autoplay muted loop playsinline preload="auto" poster="{{ '/assets/media/hero-poster.jpg' | relative_url }}" aria-hidden="true">
+    <source src="{{ '/assets/media/background-merged.mp4' | relative_url }}" type="video/mp4" />
   </video>
   <div class="lab-hero-copy">
     <p class="lab-eyebrow">Purdue University · Computer Science</p>
@@ -38,7 +38,7 @@ latest_posts:
   {% for project in sorted_projects %}
     <a class="lab-research-card" href="{{ project.url | relative_url }}">
       <div class="lab-image-card">
-        <img src="{{ project.img | relative_url }}" alt="{{ project.img_alt }}" loading="lazy" width="1200" height="800" />
+        {% include lab/media.liquid path=project.img alt=project.img_alt width="1200" height="800" %}
       </div>
       <div class="lab-research-card-copy">
         <h3>{{ project.title }}</h3>

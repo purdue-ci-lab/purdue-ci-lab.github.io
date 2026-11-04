@@ -21,7 +21,7 @@ nav_order: 2
   <section class="lab-research-row" id="{{ project.slug }}" aria-labelledby="title-{{ project.slug }}">
     <figure>
       <div class="lab-image-card">
-        <img src="{{ project.img | relative_url }}" alt="{{ project.img_alt }}" loading="lazy" width="1200" height="800" />
+        {% include lab/media.liquid path=project.img alt=project.img_alt width="1200" height="800" %}
       </div>
     </figure>
     <div class="lab-research-row-copy">

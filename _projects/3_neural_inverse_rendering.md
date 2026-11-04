@@ -3,7 +3,7 @@ layout: page
 title: Neural Inverse Rendering
 description: Neural inverse rendering from time-resolved measurements, recovering geometry, materials, and lighting from how light travels through a scene.
 permalink: /research/neural-inverse-rendering/
-img: assets/img/publication_preview/firecam.png
+img: assets/media/publication_preview/firecam.png
 importance: 3
 category: imaging
 short_title: "Neural inverse rendering"
@@ -13,7 +13,7 @@ overview: "Inverse rendering runs image formation backward to recover the scene 
 ---
 
 <figure class="lab-project-figure">
-  <img src="{{ page.img | relative_url }}" alt="{{ page.img_alt }}" width="1200" height="800" loading="eager" />
+  {% include lab/media.liquid path=page.img alt=page.img_alt width="1200" height="800" loading="eager" %}
 </figure>
 
 Rendering turns a scene into measurements; inverse rendering asks the reverse question: given the measurements, what scene produced them? Conventional inverse rendering works from ordinary images, which record only how much light arrives at each pixel.

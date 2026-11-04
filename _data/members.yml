@@ -2,7 +2,7 @@
 # Lab members. Rendered by _pages/people.md as a card grid.
 #
 # To add a member: copy a block under `current`, fill in the fields, and drop a
-# square photo in assets/img/members/. The portrait and name link to `homepage`
+# square photo in assets/media/members/. The portrait and name link to `homepage`
 # (leave it blank for no link); other link fields are not displayed.
 # Roles below default to "PhD Student" — EDIT each to the correct title.
 # -----------------------------------------------------------------------------

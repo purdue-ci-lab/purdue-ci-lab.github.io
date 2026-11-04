@@ -46,9 +46,11 @@
 >
   {% if site.enable_publication_thumbnails %}
     {%- comment -%}
-      Lab override: every entry shows an image. Set `preview = {name.gif}` in the bib entry
-      (a file in assets/img/publication_preview/ or a full URL) to use a real image or GIF;
-      otherwise `publication_preview_placeholder` from _config.yml is shown (camera_on_fire.svg if unset).
+      Lab override: every entry shows an image. Set `preview = {name.png}` in the bib entry
+      (a file in assets/media/publication_preview/ or a full URL) to use a real image, or
+      `preview = {name.mp4}` for a muted looping video (use MP4 instead of GIF; a `name.jpg` next to
+      it is used as the poster frame if present). Otherwise `publication_preview_placeholder` from
+      _config.yml is shown (camera_on_fire.svg if unset).
     {%- endcomment -%}
     {%- assign preview_placeholder = site.publication_preview_placeholder | default: 'camera_on_fire.svg' -%}
     {%- assign entry_title_text = entry.title | strip_html | strip | escape -%}
@@ -62,11 +64,17 @@
       {% if entry_primary_url %}
         <a class="publication-preview-link" href="{{ entry_primary_url }}" tabindex="-1" aria-hidden="true">
       {% endif %}
-      {% if entry.preview %}
+      {% if entry.preview contains '.mp4' %}
+        {%- assign preview_video_path = entry.preview -%}
+        {%- unless entry.preview contains '://' -%}
+          {%- assign preview_video_path = entry.preview | prepend: '/assets/media/publication_preview/' -%}
+        {%- endunless -%}
+        {% include lab/media.liquid path=preview_video_path alt=entry_preview_alt class="preview" %}
+      {% elsif entry.preview %}
         {% if entry.preview contains '://' %}
           <img class="preview" src="{{ entry.preview }}" alt="{{ entry_preview_alt }}" loading="lazy">
         {% else %}
-          {% assign entry_path = entry.preview | prepend: '/assets/img/publication_preview/' %}
+          {% assign entry_path = entry.preview | prepend: '/assets/media/publication_preview/' %}
           {%
             include figure.liquid
             loading="lazy"
@@ -81,7 +89,7 @@
       {% else %}
         <img
           class="preview preview-placeholder"
-          src="{{ preview_placeholder | prepend: '/assets/img/publication_preview/' | relative_url }}"
+          src="{{ preview_placeholder | prepend: '/assets/media/publication_preview/' | relative_url }}"
           alt=""
           width="300"
           height="200"

@@ -16,7 +16,7 @@ heading: "People"
 <div class="lab-faculty">
   {% if pi.homepage %}<a href="{{ pi.homepage }}" class="lab-person-link" tabindex="-1" aria-hidden="true">{% endif %}
   <img
-    src="{{ pi.image | prepend: '/assets/img/' | relative_url }}"
+    src="{{ pi.image | prepend: '/assets/media/' | relative_url }}"
     alt="{{ pi.name }}"
     loading="eager"
     class="lab-faculty-portrait" width="180" height="180" />
@@ -38,7 +38,7 @@ heading: "People"
   <div class="lab-member">
     {% if m.homepage %}<a href="{{ m.homepage }}" class="lab-person-link">{% endif %}
     <img
-      src="{{ m.image | prepend: '/assets/img/' | relative_url }}"
+      src="{{ m.image | prepend: '/assets/media/' | relative_url }}"
       alt=""
       loading="lazy"
       class="lab-member-portrait" width="180" height="180" />
