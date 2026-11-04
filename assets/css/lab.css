@@ -227,7 +227,7 @@ html[data-theme="dark"] {
   padding-block: clamp(48px, 7vw, 88px);
   /* equal to the breakout distance, so the copy lines up with the page content below */
   padding-inline: calc(50vw - 50%);
-  background: #111 url("../img/hero-poster.jpg") center / cover no-repeat;
+  background: #111 url("../media/hero-poster.jpg") center / cover no-repeat;
   color: #fff;
 }
 
@@ -348,7 +348,8 @@ html[data-theme="dark"] {
     box-shadow 200ms ease;
 }
 
-.lab-image-card img {
+.lab-image-card img,
+.lab-image-card video {
   display: block;
   transition:
     transform 600ms ease,
@@ -363,7 +364,9 @@ html[data-theme="dark"] {
   }
 
   .lab-image-card:hover img,
+  .lab-image-card:hover video,
   .lab-research-card:hover .lab-image-card img,
+  .lab-research-card:hover .lab-image-card video,
   .lab-member:hover .lab-image-card img {
     filter: brightness(1.04) saturate(1.06);
   }
@@ -377,7 +380,9 @@ html[data-theme="dark"] {
   }
 
   .lab-image-card:hover img,
+  .lab-image-card:hover video,
   .lab-research-card:hover .lab-image-card img,
+  .lab-research-card:hover .lab-image-card video,
   .lab-member:hover .lab-image-card img {
     transform: scale(1.04);
   }
@@ -400,7 +405,8 @@ html[data-theme="dark"] {
   text-decoration: none;
 }
 
-.lab-research-card img {
+.lab-research-card img,
+.lab-research-card video {
   width: 100%;
   height: auto;
   aspect-ratio: 4 / 3;
@@ -495,7 +501,8 @@ html[data-theme="dark"] {
   scroll-margin-top: 108px;
 }
 
-.lab-research-row img {
+.lab-research-row img,
+.lab-research-row video {
   width: 100%;
   height: auto;
   aspect-ratio: 4 / 3;
@@ -532,7 +539,8 @@ html[data-theme="dark"] {
   margin: 6px 0 24px 40px;
 }
 
-.lab-project-figure img {
+.lab-project-figure img,
+.lab-project-figure video {
   width: 100%;
   height: auto;
   aspect-ratio: 4 / 3;
@@ -694,13 +702,14 @@ html[data-theme="dark"] {
   background: var(--lab-surface);
 }
 
-.lab-site .publications .publication-media figure,
-.lab-site .publications .publication-media picture {
+.lab-site .publications .publication-media figure {
   display: block;
   margin: 0;
 }
 
-.lab-site .publications .publication-media img.preview {
+.lab-site .publications .publication-media img.preview,
+.lab-site .publications .publication-media video.preview {
+  display: block;
   width: 100%;
   height: auto;
   aspect-ratio: 3 / 2;
@@ -712,6 +721,7 @@ html[data-theme="dark"] {
 }
 
 .lab-site .publications ol.bibliography li .publication-media > img ~ abbr,
+.lab-site .publications ol.bibliography li .publication-media > video ~ abbr,
 .lab-site .publications ol.bibliography li .publication-media > figure ~ abbr,
 .lab-site .publications ol.bibliography li .publication-media > .publication-preview-link ~ abbr {
   position: absolute;
