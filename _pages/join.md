@@ -12,7 +12,7 @@ We are growing and looking for curious, motivated people who are excited to buil
 
 ## Prospective PhD students
 
-Dr. Nousias is **actively recruiting PhD students**. To be advised in the lab, you must first be admitted to the [Purdue CS PhD program](https://www.cs.purdue.edu/graduate/index.html). When you apply:
+To be advised in the lab, you must first be admitted to the [Purdue CS PhD program](https://www.cs.purdue.edu/graduate/index.html). When you apply:
 
 - List **Computer Vision / Computational Imaging** as an area of interest.
 - Mention Dr. Nousias in your statement if our work is a good match.
