@@ -221,7 +221,7 @@ html[data-theme="dark"] {
 }
 
 .lab-hero.lab-hero--video {
-  --lab-hero-dim: 0.55; /* raise toward 1 for a darker video, lower for a brighter one */
+  --lab-hero-dim: 0; /* raise toward 1 for a darker video, lower for a brighter one */
   position: relative;
   isolation: isolate;
   overflow: hidden;
@@ -413,6 +413,13 @@ html[data-theme="dark"] {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 28px;
+}
+
+/* With exactly two research areas, use two columns instead of leaving the third empty. */
+@media (min-width: 701px) {
+  .lab-research-grid:has(> :last-child:nth-child(2)) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 .lab-site .lab-research-card {

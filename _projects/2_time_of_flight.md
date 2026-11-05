@@ -1,15 +1,15 @@
 ---
 layout: page
-title: Light in Flight
-description: Time-of-flight imaging uses the travel time of light to measure depth, recover 3D shape, and see around corners.
+title: Transient Light in Flight
+description: Transient imaging uses the travel time of light to measure depth, recover 3D shape and appearance, and see around corners.
 permalink: /research/time-of-flight/
-img: assets/media/research/opp-vis-tof-thumbnail.mp4
+img: assets/media/research/transient-side-pan-thumbnail.mp4
 importance: 2
 category: imaging
-short_title: "Time-of-flight imaging"
-img_alt: "Video of multiple lidars sending photons to a camera"
+short_title: "Transient & time-of-flight imaging"
+img_alt: "Video panning around a 3D reconstruction of two mannequins as colored pulses of light from three sources sweep across the scene"
 research_question: "What does the travel time of light reveal about a scene?"
-overview: "Time-of-flight sensors record not just how much light returns, but when. We use this timing to recover geometry and appearance, from direct depth sensing to hidden objects seen only through scattered light."
+overview: "Time-of-flight sensors record not just how much light returns, but when. We use this timing to recover geometry and appearance, from direct depth sensing and transient inverse rendering to hidden objects seen only through scattered light."
 ---
 
 <figure class="lab-project-figure">
@@ -19,6 +19,8 @@ overview: "Time-of-flight sensors record not just how much light returns, but wh
 Time-of-flight sensors measure how long light takes to travel through a scene. With picosecond timing, these transient measurements encode depth, shape, and material properties, along with light that has bounced several times before returning.
 
 We develop models and algorithms that make the most of this timing information: reconstructing 3D scenes from transient and LiDAR data, recovering objects hidden around corners from indirect reflections, and using light sources already present in a scene instead of a dedicated laser.
+
+Much of this work is transient inverse rendering: given time-resolved measurements, what scene produced them? We build neural scene representations together with differentiable models of time-resolved light transport, and fit them directly to transient and single-photon LiDAR data. Because photon timing encodes path length, these measurements constrain geometry and multi-bounce light transport far more tightly than intensity alone. This lets us reconstruct 3D scenes, synthesize new transient and conventional views, and separate shape from material and lighting, even from only a few viewpoints.
 
 ## Related publications
 
