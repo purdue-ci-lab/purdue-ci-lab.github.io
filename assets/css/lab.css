@@ -80,15 +80,16 @@ html[data-theme="dark"] {
   text-decoration: none;
   color: var(--global-text-color);
   padding-block: 10px;
+  margin-right: 0; /* the menu button / nav already sits at the far right */
 }
 
-.lab-brand-university {
-  font-size: 23px;
+.lab-brand-name {
+  font-size: clamp(15px, 4.8vw, 23px); /* shrinks on narrow phones so the menu button stays on the same line */
   font-weight: 700;
   letter-spacing: 0.01em;
 }
 
-.lab-brand-name {
+.lab-brand-university {
   font-size: 12px;
   letter-spacing: 0.015em;
   margin-top: 4px;
@@ -797,6 +798,21 @@ html[data-theme="dark"] {
   text-decoration: underline;
   text-decoration-thickness: 1px;
   text-underline-offset: 3px;
+}
+
+/* Author website links (_data/authors.yml, member homepages): darker text, gold on hover. No
+   dashed border, so the underline keeps meaning "lab member". */
+.lab-site .publications ol.bibliography li .author a.lab-author-link {
+  border-bottom: 0;
+  color: var(--global-text-color);
+}
+
+.lab-site .publications ol.bibliography li .author a.lab-author-link:hover {
+  color: var(--lab-accent);
+}
+
+.lab-site .publications ol.bibliography li .author a.lab-member-author:hover {
+  text-decoration: underline;
 }
 
 .lab-site .publications .author sup {

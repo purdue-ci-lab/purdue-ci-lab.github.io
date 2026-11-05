@@ -1,0 +1,127 @@
+# -----------------------------------------------------------------------------
+# Websites for publication authors. In the publication listings, an author whose
+# name matches an entry here links to its `url`.
+#
+# Matching: same last name, and the same first name or first initial. So
+# `name: David Lindell` matches "David B. Lindell", "David Lindell" and
+# "D. B. Lindell" in _bibliography/papers.bib. Middle names are ignored.
+# For a multi-word last name, add `last:` (e.g. `last: van Gogh`).
+#
+# Lab members (_data/members.yml) already link to their `homepage`; add them
+# here only to use a different link.
+# -----------------------------------------------------------------------------
+
+# - name: Vincent van Gogh
+#   last: van Gogh
+#   url: https://example.com/
+
+- name: Sotiris Nousias
+  url: https://sotirisnousias.com/
+
+- name: Jerry Yan
+  url: https://jerukan.github.io/
+
+- name: Srinidhi Hegde
+  url: https://srihegde.github.io
+
+- name: Matteo Forlivesi
+  url: https://www.linkedin.com/in/matteo-forlivesi-92a007252/
+
+- name: Bowen Tan
+  url: https://www.linkedin.com/in/bowen-tan-669775183/
+
+- name: Merve Barin
+  url: https://www.linkedin.com/in/merve-rabia-barin/
+
+- name: Rohit Banerjee
+  url: https://www.linkedin.com/in/rohit-banerjee-569b55177/
+
+- name: Andrew Xie
+  url: https://andrewxie.com/
+
+- name: Dongyu Du
+  url: https://dongyu-du.github.io/
+
+- name: David B. Lindell
+  url: https://davidlindell.com/
+
+- name: Kiriakos N. Kutulakos
+  url: https://www.cs.toronto.edu/~kyros/
+
+- name: Siddharth Somasundaram
+  url: https://sidsoma.com/
+
+- name: Andrew Y. Guo
+  url: https://andrewguo.com/
+
+- name: Anagh Malik 
+  url: https://anaghmalik.com/
+
+- name: SaiKiran Tedla
+  url: https://tedlasai.github.io/
+
+- name: Yutong Dai
+  url: https://dongdong93.github.io/
+
+- name: Yiqian Qin
+  url: https://www.linkedin.com/in/yiqian22/
+
+- name: Zach Salehe 
+  url: https://zachsalehe.github.io/
+
+- name: Benjamin Attal
+  url: https://benattal.github.io/
+
+- name: Mian Wei
+  url: https://www.mianwei.ca/
+
+- name: Howard Xiao
+  url: https://howardxiao.ca/
+
+- name: Maxx Wu
+  url: https://www.cs.toronto.edu/~wumaxx/
+
+- name: Shahmeer Athar
+  url: https://www.linkedin.com/in/shahmeerathar/
+
+- name: Kevin J. Wang
+  url: https://www.linkedin.com/in/kevin-j-wang/
+
+- name: David A. Barmherzig
+  url: https://davidbar.org/
+
+- name: Parsa Mirdehghan
+  url: https://www.cs.toronto.edu/~parsa/
+
+- name:  Rahul Gulve
+  url: https://www.linkedin.com/in/rahul-gulve/
+
+- name: Manolis Lourakis
+  url: https://www.ics.forth.gr/person/Lourakis/Manolis/
+
+- name: Christos Bergeles
+  url: https://www.kcl.ac.uk/people/christos-bergeles-1/
+
+- name: Shumian Xin
+  url: https://shumianxin.github.io/
+
+- name: Aswin C. Sankaranarayanan
+  url: https://users.ece.cmu.edu/~saswin/
+
+- name: Srinivasa G. Narasimhan
+  url: https://www.cs.cmu.edu/~srinivas/
+
+- name: Ioannis Gkioulekas
+  url: https://imaging.cs.cmu.edu/igkioule/
+
+- name: François Chadebecq
+  url: https://www.mdx.ac.uk/about-us/our-people/staff-directory/dr-francois-chadebecq/
+
+- name: Jonas Pichat
+  url: https://www.linkedin.com/in/jonaspichat/
+
+- name: Pearse Keane
+  url: https://profiles.ucl.ac.uk/31287-pearse-keane/
+
+- name: Sébastien Ourselin
+  url: https://www.kcl.ac.uk/people/sebastien-ourselin

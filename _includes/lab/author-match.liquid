@@ -1,0 +1,25 @@
+{%- comment -%}
+  Lab-owned include. Finds the person in `people` (a list of entries with `name`, and optionally
+  `last` for multi-word last names) who matches one publication author, and stores it in
+  `lab_author_match` (null if none). An entry matches when its last name equals the author's, and
+  its first name equals the author's first name or first initial, so "D. B. Lindell" and
+  "David B. Lindell" both match `name: David Lindell`.
+
+  Params:
+    people     list of entries to search (e.g. site.data.authors)
+    first_key  author's first given name, lowercased, accents and periods removed ("david", "d")
+    last_key   author's last name, lowercased, accents removed ("lindell")
+{%- endcomment -%}
+{%- assign lab_author_match = null -%}
+{%- for lab_person in include.people -%}
+  {%- assign lab_person_parts = lab_person.name | split: ' ' -%}
+  {%- assign lab_person_last = lab_person.last | default: lab_person_parts.last | downcase | remove_accents -%}
+  {%- if lab_person_last == include.last_key -%}
+    {%- assign lab_person_first = lab_person_parts | first | remove: '.' | downcase | remove_accents -%}
+    {%- assign lab_person_initial = lab_person_first | slice: 0 -%}
+    {%- if include.first_key == lab_person_first or include.first_key == lab_person_initial -%}
+      {%- assign lab_author_match = lab_person -%}
+      {%- break -%}
+    {%- endif -%}
+  {%- endif -%}
+{%- endfor -%}

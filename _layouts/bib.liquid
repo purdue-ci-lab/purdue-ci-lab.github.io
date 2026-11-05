@@ -136,7 +136,10 @@
     </div>
     <!-- Author -->
     <div class="author">
-      {%- comment -%} Lab override: lab members (PI, current, alumni) from _data/members.yml are underlined. {%- endcomment -%}
+      {%- comment -%}
+        Lab override: lab members (current, alumni) from _data/members.yml are underlined; the PI is not.
+        Names link to websites from _data/authors.yml or a member's `homepage`.
+      {%- endcomment -%}
       {%- assign lab_members = '' | split: '' -%}
       {%- if site.data.members.pi -%}
         {%- assign lab_members = lab_members | push: site.data.members.pi -%}
@@ -163,33 +166,27 @@
             {% assign author_is_self = true %}
           {% endif %}
         {%- endif -%}
-        {% assign coauthor_url = null %}
         {%- assign clean_last_name = author_last_name | downcase | remove_accents -%}
-        {% if site.data.coauthors[clean_last_name] %}
-          {%- for coauthor in site.data.coauthors[clean_last_name] -%}
-            {% if coauthor.firstname contains author.first %}
-              {%- assign coauthor_url = coauthor.url -%}
-              {% break %}
-            {%- endif -%}
-          {% endfor %}
-        {%- endif -%}
-
-        {%- assign author_member = null -%}
         {%- assign author_first_key = author.first | split: ' ' | first | remove: '.' | downcase | remove_accents -%}
-        {%- for member in lab_members -%}
-          {%- assign member_name_parts = member.name | split: ' ' -%}
-          {%- assign member_last_key = member_name_parts | last | downcase | remove_accents -%}
-          {%- if member_last_key == clean_last_name -%}
-            {%- assign member_first_key = member_name_parts | first | downcase | remove_accents -%}
-            {%- assign member_initial = member_first_key | slice: 0 -%}
-            {%- if author_first_key == member_first_key or author_first_key == member_initial -%}
-              {%- assign author_member = member -%}
-              {%- break -%}
-            {%- endif -%}
-          {%- endif -%}
-        {%- endfor -%}
+
+        {%- include lab/author-match.liquid people=lab_members first_key=author_first_key last_key=clean_last_name -%}
+        {%- assign author_member = lab_author_match -%}
         {%- if author_member == null and author_is_self -%}
           {%- assign author_member = site.data.members.pi -%}
+        {%- endif -%}
+        {%- assign author_is_pi = false -%}
+        {%- if author_member and author_member.name == site.data.members.pi.name -%}
+          {%- assign author_is_pi = true -%}
+        {%- endif -%}
+
+        {%- comment -%}
+          Lab override: author links come from _data/authors.yml, falling back to a lab member's
+          `homepage` in _data/members.yml.
+        {%- endcomment -%}
+        {%- include lab/author-match.liquid people=site.data.authors first_key=author_first_key last_key=clean_last_name -%}
+        {%- assign author_url = lab_author_match.url -%}
+        {%- if author_url == blank and author_member -%}
+          {%- assign author_url = author_member.homepage -%}
         {%- endif -%}
         {%- capture author_name -%}{{ author.first }} {{ author_last_name }}{%- endcapture -%}
         {%- assign author_name = author_name | strip -%}
@@ -204,10 +201,16 @@
           {%- endif %}
           {%- if forloop.last and author_array_limit == author_array_size %}and {% endif -%}
         {% endif %}
-        {%- if author_member -%}
-          <span class="lab-member-author">{{ author_name }}</span>{{ author_marks_html }}
-        {%- elsif coauthor_url -%}
-          <a href="{{ coauthor_url }}">{{ author_name }}</a>{{ author_marks_html }}
+        {%- comment -%} Lab members are underlined, except the PI. {%- endcomment -%}
+        {%- assign author_class = '' -%}
+        {%- if author_member and author_is_pi == false -%}
+          {%- assign author_class = 'lab-member-author' -%}
+        {%- endif -%}
+        {%- if author_url != blank -%}
+          <a class="lab-author-link{% if author_class != '' %} {{ author_class }}{% endif %}" href="{{ author_url }}">{{ author_name }}</a>
+          {{- author_marks_html }}
+        {%- elsif author_class != '' -%}
+          <span class="{{ author_class }}">{{ author_name }}</span>{{ author_marks_html }}
         {%- else -%}
           {{ author_name -}}
           {{- author_marks_html }}
