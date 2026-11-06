@@ -18,7 +18,7 @@ nav_order: 5
   {% for talk in site.data.talks %}
     <li>
       <strong>{{ talk.title }}</strong> —
-      {% for venue in talk.venues %}{{ venue.name }} ({{ venue.year }}){% unless forloop.last %}; {% endunless %}{% endfor %}
+      {% for venue in talk.venues %}{{ venue.name }} ({{ venue.year }}){% if venue.presenter %}, presented by {{ venue.presenter }}{% endif %}{% unless forloop.last %}; {% endunless %}{% endfor %}
     </li>
   {% endfor %}
 </ul>

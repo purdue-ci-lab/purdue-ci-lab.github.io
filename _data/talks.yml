@@ -2,14 +2,21 @@
 # Talks, listed under "Talks" on the News page (_pages/news.md).
 # The section is hidden while this list is empty.
 #
-# Each talk has a title and one or more venues, e.g.
+# Each talk has a title and one or more venues. Each venue lists who presented
+# the talk there (`presenter`, optional), e.g.
 #
 # - title: Title of the Talk
 #   venues:
 #     - name: Department Seminar, University Name
 #       year: 2026
+#       presenter: Sotiris Nousias
 #     - name: Workshop Name, Conference Name
 #       year: 2025
+#       presenter: Jerry Yan
 # -----------------------------------------------------------------------------
 
-[]
+- title: Ultra-Wideband Single-Photon Sensing
+  venues:
+    - name: 2026 Asilomar Conference on Signals, Systems, and Computers
+      year: 2026
+      presenter: Sotiris Nousias
