@@ -3,11 +3,11 @@ layout: page
 title: Event-Based Sensing
 description: Sensing with neuromorphic cameras, whose pixels respond only to events, changes in what they measure, instead of recording full frames.
 permalink: /research/event-based-sensing/
-img: assets/media/publication_preview/firecam.png
+img: assets/media/research/events-derivative-thumbnail.mp4
 importance: 4
 category: imaging
 short_title: "Event-based sensing"
-img_alt: "Placeholder image"
+img_alt: "Video of neuromorphic camera events from moving shapes, with the two event polarities shown in red and blue"
 research_question: "What can a camera see if it only records change?"
 overview: "In a neuromorphic camera, pixels do not record frames; each one responds only to events, changes in the light it measures. Static parts of a scene produce no output, while changes are captured with microsecond timing and high dynamic range. We develop sensing models and algorithms that recover video, motion, and scene structure from these events."
 ---
