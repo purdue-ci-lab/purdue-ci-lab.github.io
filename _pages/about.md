@@ -32,7 +32,6 @@ latest_posts:
     <h2 id="home-research-title" class="lab-section-title">Research areas</h2>
     <a class="lab-text-link" href="{{ '/research/' | relative_url }}">All research areas <span aria-hidden="true">↗</span></a>
   </div>
-  <p class="lab-section-intro">Our current work focuses on these areas.</p>
   {% assign sorted_projects = site.projects | sort: 'importance' %}
   <div class="lab-research-grid">
   {% for project in sorted_projects %}

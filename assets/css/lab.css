@@ -950,6 +950,41 @@ html[data-theme="dark"] {
   color: var(--global-text-color);
 }
 
+/* Navbar breakpoint. The header deliberately omits the theme's `collapse` and `navbar-expand-sm` classes: their
+   display rules are `!important` inside Tailwind cascade layers, which beat any unlayered `!important` here, so they
+   forced the menu open as a full-height vertical list between 576px and 1000px (e.g. when zoomed in). */
+@media (min-width: 1001px) {
+  .lab-site #navbar .navbar-collapse {
+    display: flex;
+    flex-basis: auto;
+    width: auto;
+  }
+
+  .lab-site #navbar .navbar-nav {
+    flex-direction: row;
+  }
+
+  .lab-site #navbar .navbar-nav .nav-link {
+    padding-block: 0.5rem;
+  }
+
+  .lab-site #navbar .navbar-nav .dropdown-menu {
+    position: absolute;
+  }
+
+  .lab-site #navbar .navbar-toggler {
+    display: none;
+  }
+}
+
+/* Short viewports (landscape phones, heavy zoom): let the header scroll away instead of pinning it over the page. */
+@media (max-height: 500px) {
+  .lab-site #navbar.fixed-top,
+  .lab-site #progress {
+    position: absolute;
+  }
+}
+
 @media (max-width: 1000px) {
   .lab-site #navbar .container {
     flex-wrap: wrap;
@@ -967,11 +1002,19 @@ html[data-theme="dark"] {
   }
 
   .lab-site #navbar .navbar-collapse:not(.show) {
-    display: none !important;
+    display: none;
   }
 
+  /* Cap the open menu at the space below the header bar so every item stays reachable on short screens. */
   .lab-site #navbar .navbar-collapse.show {
-    display: block !important;
+    display: block;
+    max-height: calc(100dvh - 88px);
+    overflow-y: auto;
+  }
+
+  /* The theme makes the navbar 95% opaque; with the menu open that lets page text show through it. */
+  .lab-site #navbar:has(.navbar-collapse.show) {
+    opacity: 1;
   }
 
   .lab-site #navbar .navbar-nav {
